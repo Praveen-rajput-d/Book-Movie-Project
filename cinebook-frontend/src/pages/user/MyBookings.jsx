@@ -1,140 +1,3 @@
-// import React, { useEffect, useState } from 'react'
-// import { cancelBooking, getMyBookings } from '../../services/bookingService';
-// import { useNavigate } from 'react-router-dom';
-
-// const MyBookings = () => {
-//   const[booking,setBooking]=useState([]);
-//   const navigate=useNavigate();
-//   useEffect(()=>{
-//  fetchBooking();
-//   },[]);
-//   const fetchBooking=async()=>{
-//          try{
-//             const response= await getMyBookings();
-//             console.log(response.da);
-//             setBooking(response.data);
-//          }catch(error){
-//           console.log(error);
-//          }
-//   }
-
-
-//   //for canceling the booking
-//   const handlecancel=async(bookingId)=>{
-//     const confirmcancel=window.confirm("are you sure to cancel the booking");
-//     if(!confirmcancel)return;
-//     try{
-//         await cancelBooking(bookingId);
-//         alert("Booking Cancelled Successfully");
-//         fetchBooking();//refresh list
-//     }catch(error){
-//       console.log(error);
-//       alert("Failed to cancel Booking");
-//     }
-//   }
-
-//   return (
-//     <div className="container mt-5">
-
-//     <h2 className="text-center mb-4">
-//         My Bookings
-//     </h2>
-
-//     <div className="row">
-
-//         {
-//             booking.map((booking) => (
-
-//                 <div className="col-md-4 mb-6" key={booking.id}>
-
-//                     <div className="card shadow-lg border-0">
-
-//                         <div className="card-header bg-danger text-white text-center">
-
-//                             <h4>{booking.movieName}</h4>
-
-//                         </div>
-
-//                         <div className="card-body">
-
-//                             <p>
-//                                 <strong>Booking No :</strong>
-//                                 {booking.bookingNumber}
-//                             </p>
-
-//                             <p>
-//                                 <strong>Theatre :</strong>
-//                                 {booking.theatreName}
-//                             </p>
-
-//                             <p>
-//                                 <strong>Screen :</strong>
-//                                 {booking.screenName}
-//                             </p>
-
-//                             <p>
-//                                 <strong>Seats :</strong>
-//                                 {booking.seatNumbers.join(", ")}
-//                             </p>
-
-//                             <p>
-//                                 <strong>Date :</strong>
-//                                 {booking.showDate}
-//                             </p>
-
-//                             <p>
-//                                 <strong>Time :</strong>
-//                                 {booking.showTime}
-//                             </p>
-
-//                             <p>
-//                                 <strong>Total :</strong>
-//                                 ₹ {booking.totalAmount}
-//                             </p>
-
-//                             <p>
-
-//                                 <span
-//                                     className={`badge ${
-//                                         booking.bookingStatus === "CONFIRMED"
-//                                             ? "bg-success"
-//                                             : booking.bookingStatus === "CANCELLED"
-//                                             ? "bg-danger"
-//                                             : "bg-secondary"
-//                                     }`}
-//                                 >
-//                                     {booking.bookingStatus}
-//                                 </span>
-
-//                             </p>
-//                             <div className="d-flex justify-content-between mt-3">
-                               
-//                               <button className="btn btn-outline-primary btn-sm" onClick={()=>navigate(`/ticket/${booking.ticketId}`)}>
-//                                 View Ticket
-//                               </button>
-//                               <button className="btn btn-outline-danger btn-sm" 
-//                               onClick={()=>handlecancel(booking.id)} disabled={booking.bookingStatus==="CANCELLED"}>Cancel Booking</button>
-//                         </div>
-//                         </div>
-
-//                     </div>
-
-//                 </div>
-
-//             ))
-//         }
-
-//     </div>
-
-// </div>
-  
-      
-//   )
-// }
-
-// export default MyBookings
-
-
 import React, { useEffect, useState } from "react";
 import {
   cancelBooking,
@@ -205,7 +68,7 @@ const MyBookings = () => {
 
       <div className="container">
 
-        {/* ================= PAGE HEADER ================= */}
+        {/*Bookings page header*/}
 
         <div className="bookings-header">
 
@@ -231,7 +94,7 @@ const MyBookings = () => {
         </div>
 
 
-        {/* ================= EMPTY STATE ================= */}
+        {/* Empty state */}
 
         {booking.length === 0 ? (
 
@@ -261,7 +124,7 @@ const MyBookings = () => {
 
         ) : (
 
-          /* ================= BOOKINGS ================= */
+          /* BOOKINGS */
 
           <div className="row g-4">
 
@@ -275,7 +138,7 @@ const MyBookings = () => {
                 <div className="booking-card">
 
 
-                  {/* ================= MOVIE HEADER ================= */}
+                  {/*  Movie header part*/}
 
                   <div className="booking-card-header">
 
@@ -298,7 +161,7 @@ const MyBookings = () => {
                   </div>
 
 
-                  {/* ================= BOOKING DETAILS ================= */}
+                  {/* Booking Details*/}
 
                   <div className="booking-card-body">
 
@@ -410,7 +273,7 @@ const MyBookings = () => {
                     </div>
 
 
-                    {/* ================= TOTAL ================= */}
+                    {/* Booking Total Amount */}
 
                     <div className="booking-total">
 
@@ -425,7 +288,7 @@ const MyBookings = () => {
                     </div>
 
 
-                    {/* ================= STATUS ================= */}
+                    {/* Status*/}
 
                     <div className="booking-status-row">
 
@@ -455,20 +318,11 @@ const MyBookings = () => {
                   </div>
 
 
-                  {/* ================= CARD FOOTER ================= */}
+                  {/*Card Footer part */}
 
                   <div className="booking-card-footer">
 
-                    {/* <button
-                      className="view-ticket-btn"
-                      onClick={() =>
-                        navigate(
-                          `/ticket/${booking.ticketId}`
-                        )
-                      }
-                    >
-                      🎟️ View Ticket
-                    </button> */}
+                  
                     {
                       booking.bookingStatus==="CANCELLED"?(
                         <button className="btn btn-outline-secondary btn-sm" disabled>Ticket Unavailable</button>

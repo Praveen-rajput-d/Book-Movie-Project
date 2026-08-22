@@ -1,85 +1,3 @@
-// import React, { useEffect, useState } from 'react'
-// import { useNavigate, useParams } from 'react-router-dom';
-// import { getMovieById } from '../../services/movieService';
-
-// const MovieDetails = () => {
-//     const{id}=useParams();
-//     const[movie,setMovie]=useState(null);
-//      //for make the button clickable book movie we use navigate hook
-//        const navigate=useNavigate();
-//     useEffect(()=>{
-//       fetchMovie();
-//     },[]);
-
-//     function  fetchMovie(){
-//       getMovieById(id).
-//       then((Response)=>{
-//         console.log(Response.data);
-//         setMovie(Response.data);
-//       })
-//       .catch((error)=>{
-//         console.log(error);
-//       });
-//     }
-
-//     if(!movie){
-//         return <h2 className="text-center mt-5">Loading</h2>
-//     }
-
-   
-
-//   return (
-//     <div className="container mt-5">
-//         <div className="row">
-//             <div className="col-md-4">
-//                 <img src={`http://localhost:8080/posters/${movie.posterUrl}`} 
-//                 alt={movie.title}
-//                 className="img-fluid rounded shadow details-poster"
-//                 style={{height:"550px",width:"100%",objectFit:"cover"}}/>
-
-//             </div>
-//             <div className="col-md-8">
-//                 <h1 className="fw-bold">{movie.title}</h1>
-//                 <h4 className="text-warning">⭐ {movie.rating}</h4>
-//                 <p>
-//                     <strong>Genre:</strong>{movie.genre}
-//                 </p>
-//                  <p>
-//                     <strong>Language:</strong>{movie.language}
-//                 </p>
-//                  <p>
-//                     <strong>Duration:</strong>{movie.duration} min
-//                 </p>
-//                  <p>
-//                     <strong>Release:</strong>{movie.releaseDate}
-//                 </p>
-//                 <hr/>
-//                 <p>
-//                     {movie.description}
-//                 </p>
-//                 <div className="mt-4">
-//                     <a href={movie.trailerUrl}
-//                     target="_blank"
-//                     rel="noreferrer"
-//                     className="btn btn-dark me-3">▶ Watch Trailer</a>
-
-//                     <button className="btn btn-danger" 
-//                     onClick={()=> navigate(`/movie/${movie.id}/shows`)}>🎟 Book Ticket</button>
-//                 </div>
-//             </div>
-//         </div>  
-//     </div>
-
-//   );
-// }
-
-// export default MovieDetails
-
-
-
-
-
-
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getMovieById } from "../../services/movieService";
@@ -94,7 +12,7 @@ const MovieDetails = () => {
     const [movie, setMovie] = useState(null);
 
 
-    // ================= FETCH MOVIE =================
+    // Fetch Movie by usedeffect hook
 
     useEffect(() => {
 
@@ -122,7 +40,7 @@ const MovieDetails = () => {
     };
 
 
-    // ================= LOADING =================
+    // if the movies are loading
 
     if (!movie) {
 
@@ -148,9 +66,9 @@ const MovieDetails = () => {
         <div className="movie-details-page">
 
 
-            {/* =================================================
-                BACKGROUND
-            ================================================= */}
+            {/* 
+                Background for movie page
+           */}
 
             <div
                 className="movie-details-background"
@@ -164,9 +82,9 @@ const MovieDetails = () => {
             <div className="movie-details-overlay"></div>
 
 
-            {/* =================================================
-                CONTENT
-            ================================================= */}
+            {/* 
+                Content
+          */}
 
             <div className="container movie-details-container">
 
@@ -184,9 +102,9 @@ const MovieDetails = () => {
                 <div className="movie-details-card">
 
 
-                    {/* =================================================
-                        POSTER
-                    ================================================= */}
+                    {/*
+                        Poster Image
+                 */}
 
                     <div className="movie-poster-section">
 
@@ -199,9 +117,9 @@ const MovieDetails = () => {
                     </div>
 
 
-                    {/* =================================================
-                        MOVIE INFORMATION
-                    ================================================= */}
+                    {/*
+                        Movie Information
+                  */}
 
                     <div className="movie-info-section">
 

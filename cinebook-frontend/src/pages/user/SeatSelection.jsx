@@ -1,148 +1,3 @@
-// import React, { useEffect, useState } from 'react'
-// import { Await, useNavigate, useParams } from 'react-router-dom';
-// import { getSeatsByShow } from '../../services/SeatService';
-// import {getShowById} from "../../services/showService";
-// import { createBooking } from '../../services/bookingService';
-
-
-// const SeatSelection = () => {
-//     const{showId}=useParams();
-//     const[seat,setSeat]=useState([]);
-//     const[selectedSeat,setSelectedseat]=useState([]);
-//     const[show,setShow]=useState(null);
-//     const totalprice=show?selectedSeat.length*show.ticketPrice:0;
-//     const navigate=useNavigate();
-//     //function to make the seat clickable and select seat
-//     const handleSeatClick=(seat)=>{
-    
-//         if(seat.booked) return;
-
-//         const alreadySelected=selectedSeat.find(s=>s.id===seat.id);
-//         if(alreadySelected){
-//             setSelectedseat(selectedSeat.filter(s=>s.id!==seat.id));
-//         }else{
-//             setSelectedseat([
-//                 ...selectedSeat,seat
-//             ]);
-//         }
-//     };
-//     //use effect for fetching seats is render only one time
-//     useEffect(()=>{
-//      fetchSeats();
-//      fetchShow();
-//     },[]);
-
-
-
-//       const fetchSeats= async()=>{
-//         try{
-//             const response=await getSeatsByShow(showId);
-//             setSeat(response.data);
-//         }catch(error){
-//             console.log(error);
-//         }
-//       }
-
-//       const fetchShow=async()=>{
-//         try{
-//             const response= await  getShowById(showId);
-//             console.log(response.data);
-//             setShow(response.data);
-//         }catch(error)
-//         {
-//             console.log(error);
-//         }
-//       };
-
-//       //use for the booking
-//       const bookingdata={
-//         showId:Number(showId), 
-//         seatIds:selectedSeat.map(seat=>seat.id)
-//       };
-//       console.log(bookingdata)
-
-       
-//        //handle booking method logic
-//        const handleBooking=async ()=>{
-//          const bookingdata={
-//             showId:Number(showId),
-//             seatIds:selectedSeat.map((seat)=>
-//                 seat.id
-//             )
-//          };
-//          console.log(bookingdata);
-
-//          try{
-//             const response=await createBooking(bookingdata);
-//             console.log(response.data);
-//             alert("Booking created Successfully!");
-//             localStorage.setItem("bookedId",response.data.id);
-//             navigate("/payment");
-//          }catch(error){
-//             console.log(error);
-//             alert("Bookin Failed");
-//          }
-//        }
-      
-//   return (
-//     <div className="container mt-5">
-//       <h2 className="text-center mb-4">Select Your Seats</h2>
-//       {/*screen banner  and after that legend*/}
-//       <div className="text-center mb-5">
-//                     <div className="bg-secondary text-white py-2 rounded"style={{
-//                         width:"60%",
-//                         margin:"auto",
-//                         fontWeight:"bold"
-//                     }}>SCREEN</div>
-//                 </div>
-//                 <div className="d-flex justify-content-center gap-4 mb-4">
-//                     <span className="btn btn-success btn-sm">Available</span>
-//                          <span className="btn btn-danger btn-sm">Booked</span>
-//                               <span className="btn btn-primary btn-sm">Selected</span>
-//                 </div>
-
-//         <div className="row justify-content-center">
-//             <div className="col md-8">
-//                 <div className="d-flex flex-wrap justify-content-center">
-//                     {
-//                         seat.map((seat)=>(
-//                             <button onClick={()=>handleSeatClick(seat)} key={seat.id}
-//                             className={`btn m-2${
-//                                 seat.booked
-//                                 ?"btn-danger"
-//                                 :selectedSeat.some(s=>s.id===seat.id)?
-//                                 "btn-primary":"btn-success"}`} disabled={seat.booked}>{seat.seatNumber}</button>
-//                         ))
-//                     }
-//                 </div>
-                
-//                 <hr/>
-//                 <h4>Selected Seats</h4>
-//                 <p>
-//                     {
-//                         selectedSeat.length===0 ? "No Seat Selected":
-//                         selectedSeat.map(seat=>seat.seatNumber).join(", ")
-//                     }
-//                 </p>
-
-//                 <h5 className="mt-4">Ticket Price:₹ {show ? show.ticketPrice : 0}</h5>
-//                 <h4 className="text-success">Total:  ₹ {totalprice}</h4>
-//                 <button onClick={handleBooking}  key={seat.id} className="btn btn-danger mt-3" disabled={selectedSeat.length===0}>Proceed To Book</button>
-//             </div>
-//         </div>
-//     </div>
-    
-
-//   )
-// }
-
-// export default SeatSelection
-
-
-
-
-
-
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getSeatsByShow } from "../../services/SeatService";
@@ -163,7 +18,7 @@ const SeatSelection = () => {
   const navigate = useNavigate();
 
 
-  // ================= TOTAL PRICE =================
+//Total price of the seats booking
 
   const totalprice =
     show
@@ -171,7 +26,7 @@ const SeatSelection = () => {
       : 0;
 
 
-  // ================= SEAT SELECTION =================
+  
 
   const handleSeatClick = (seat) => {
 
@@ -205,7 +60,7 @@ const SeatSelection = () => {
   };
 
 
-  // ================= FETCH DATA =================
+  //used for fetch seats data
 
   useEffect(() => {
 
@@ -254,7 +109,7 @@ const SeatSelection = () => {
   };
 
 
-  // ================= BOOKING =================
+  // booking function 
 
   const handleBooking = async () => {
 
@@ -311,7 +166,7 @@ const SeatSelection = () => {
   };
 
 
-  // ================= LOADING =================
+  //Loading data
 
   if (!show) {
 
@@ -339,7 +194,7 @@ const SeatSelection = () => {
       <div className="container">
 
 
-        {/* ================= PAGE HEADER ================= */}
+        {/*page Header*/}
 
         <div className="seat-page-header">
 
@@ -358,7 +213,7 @@ const SeatSelection = () => {
         </div>
 
 
-        {/* ================= SHOW INFORMATION ================= */}
+        {/* Show Information */}
 
         <div className="show-info-bar">
 
@@ -416,7 +271,7 @@ const SeatSelection = () => {
         </div>
 
 
-        {/* ================= SCREEN ================= */}
+        {/*Screen cinema */}
 
         <div className="cinema-screen-area">
 
@@ -431,7 +286,7 @@ const SeatSelection = () => {
         </div>
 
 
-        {/* ================= LEGEND ================= */}
+        {/* Legend */}
 
         <div className="seat-legend">
 
@@ -470,7 +325,7 @@ const SeatSelection = () => {
         </div>
 
 
-        {/* ================= SEATS ================= */}
+        {/*Seats */}
 
         <div className="seat-area">
 
@@ -506,7 +361,7 @@ const SeatSelection = () => {
         </div>
 
 
-        {/* ================= BOOKING SUMMARY ================= */}
+  
 
         <div className="booking-summary">
 

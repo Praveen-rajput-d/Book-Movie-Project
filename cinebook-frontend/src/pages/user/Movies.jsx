@@ -1,179 +1,3 @@
-// import React, { useState,useEffect } from 'react'
-// import { getAllMovies, getMoviesByGenre, getMoviesByLanguage, searchMovie } from '../../services/movieService';
-
-// import MovieCard from '../../components/movie/MovieCard';
-// const Movies = () => {
-// const[movies,setMovies]=useState([]);
-// const[search,setSearch]=useState("");
-// useEffect(()=>{
-// fetchMovies();
-// },[]);
-// //fetch movie from the bakcend
-// const fetchMovies=async ()=>{
-//   try{
-//     const response=await getAllMovies();
-//     console.log(response.data);
-//     setMovies(response.data.content);
-//   }catch(error){
-//     console.log(error);
-//   }
-// }
-
-// //handle search when the user search for movie
-// const handleSearch=async()=>{
-//   if(search.trim()===""){
-//     fetchMovies();
-//     return;
-//   }
-//   try{
-//     const response=await searchMovie(search);
-//     setMovies(response.data);
-//   }catch(error){
-//     console.log(error);
-//     setMovies([]);
-//   }
-// }
-// //clear the search
-
-// const handleClearSearch=()=>{
-//   setSearch("");
-//   fetchMovies();
-// }
-
-// //for filtering the movie based on the genre
-// const handleGenre=async(genre)=>{
-
-//   try{
-//     const response=await getMoviesByGenre(genre);
-//     console.log("Genre:",genre);
-//     console.log("Response:",response.data);
-//     setMovies(response.data);
-
-//   }catch(error){
-//     console.log(error);
-//     setMovies([]);
-
-//   }
-// }
-
-// const handleLanguage=async(language)=>{
-//   try{
-//     const response=await getMoviesByLanguage(language);
-//     console.log("Response:",response.data);
-//     setMovies(response.data);
-
-//   }catch(error){
-//     console.log(error);
-//     setMovies([]);
-
-//   }
-// }
-
-//   return (
-  
-//    <div className="container mt-5">
-
-//   <div className="input-group mb-4">
-//     <input
-//         type="text"
-//         className="form-control"
-//         placeholder="Search movies..."
-//         value={search}
-//         onChange={(e) => setSearch(e.target.value)}
-//     />
-
-//     <button
-//         className="btn btn-danger"
-//         onClick={handleSearch}
-//     >
-//         Search
-//     </button>
-//     <button className="btn btn-secondary" onClick={handleClearSearch} >Clear</button>
-// </div>
-// <div className="mb-4">
-
-//     <h6 className="fw-bold mb-2">Genre</h6>
-
-//     <button
-//         className="btn btn-outline-danger btn-sm me-2 mb-2"
-//         onClick={fetchMovies}
-//     >
-//         All
-//     </button>
-
-//     <button
-//         className="btn btn-outline-danger btn-sm me-2 mb-2"
-//         onClick={() => handleGenre("Action")}
-//     >
-//         Action
-//     </button>
-
-//     <button
-//         className="btn btn-outline-danger btn-sm me-2 mb-2"
-//         onClick={() => handleGenre("Comedy")}
-//     >
-//         Comedy
-//     </button>
-
-//     <button
-//         className="btn btn-outline-danger btn-sm me-2 mb-2"
-//         onClick={() => handleGenre("Drama")}
-//     >
-//         Drama
-//     </button>
-
-// </div>
-
-// <div className="mb-4">
-
-//     <h6 className="fw-bold mb-2">Language</h6>
-
-//     <button
-//         className="btn btn-outline-primary btn-sm me-2 mb-2"
-//         onClick={() => handleLanguage("Hindi")}
-//     >
-//         Hindi
-//     </button>
-
-//     <button
-//         className="btn btn-outline-primary btn-sm me-2 mb-2"
-//         onClick={() => handleLanguage("English")}
-//     >
-//         English
-//     </button>
-
-// </div>
-
-//     <h1>Movies</h1>
-//     <p>Explore all Movies</p>
-//          <p>Explore all movies</p>
-
-// <div className="row g-4 mt-3">
-
-//     {movies.map((movie) => (
-
-//         <div
-//             className="col-md-4 col-lg-4"
-//             key={movie.id}
-//         >
-
-//             <MovieCard movie={movie} />
-
-//         </div>
-
-//     ))}
-
-// </div>
-//    </div>
-//   )
-// }
-
-// export default Movies
-
-
-
-
-
 import React, { useState, useEffect } from "react";
 
 import {
@@ -202,9 +26,9 @@ const Movies = () => {
     const [loading, setLoading] = useState(false);
 
 
-    // =====================================================
-    // FETCH ALL MOVIES
-    // =====================================================
+
+    // Fetch the Movies
+
 
     useEffect(() => {
 
@@ -240,9 +64,9 @@ const Movies = () => {
     };
 
 
-    // =====================================================
-    // SEARCH MOVIE
-    // =====================================================
+  
+    // Search Movie function
+
 
     const handleSearch = async () => {
 
@@ -278,9 +102,8 @@ const Movies = () => {
     };
 
 
-    // =====================================================
-    // CLEAR SEARCH
-    // =====================================================
+    //clear button function for clear the data page
+
 
     const handleClearSearch = () => {
 
@@ -295,9 +118,8 @@ const Movies = () => {
     };
 
 
-    // =====================================================
-    // SEARCH ON ENTER
-    // =====================================================
+    // function for clicking enter to search
+  
 
     const handleSearchKeyDown = (e) => {
 
@@ -310,9 +132,9 @@ const Movies = () => {
     };
 
 
-    // =====================================================
-    // GENRE FILTER
-    // =====================================================
+
+    // Genre function to filter the data
+
 
     const handleGenre = async (genre) => {
 
@@ -349,9 +171,9 @@ const Movies = () => {
     };
 
 
-    // =====================================================
-    // LANGUAGE FILTER
-    // =====================================================
+    
+    // Langauge filter data function
+   
 
     const handleLanguage = async (language) => {
 
@@ -388,9 +210,8 @@ const Movies = () => {
     };
 
 
-    // =====================================================
-    // ALL MOVIES
-    // =====================================================
+    // All movies
+
 
     const handleAllMovies = () => {
 
@@ -410,9 +231,9 @@ const Movies = () => {
         <div className="movies-page">
 
 
-            {/* =================================================
-                PAGE HEADER
-            ================================================= */}
+            {/*
+                page header of the movie page
+        */}
 
             <section className="movies-header">
 
@@ -440,16 +261,16 @@ const Movies = () => {
             </section>
 
 
-            {/* =================================================
-                MAIN CONTENT
-            ================================================= */}
+            {/*
+                Main Content
+       */}
 
             <div className="container movies-container">
 
 
-                {/* =================================================
-                    SEARCH
-                ================================================= */}
+                {/*
+                    Search bar
+            */}
 
                 <div className="movie-search-card">
 
@@ -501,9 +322,9 @@ const Movies = () => {
                 </div>
 
 
-                {/* =================================================
-                    FILTERS
-                ================================================= */}
+                {/* 
+                    Filters
+           */}
 
                 <div className="movie-filter-card">
 
@@ -644,9 +465,9 @@ const Movies = () => {
                 </div>
 
 
-                {/* =================================================
-                    MOVIE SECTION HEADER
-                ================================================= */}
+                {/* 
+                    Movie section header part
+            */}
 
                 <div className="movie-section-header">
 
@@ -665,9 +486,9 @@ const Movies = () => {
                 </div>
 
 
-                {/* =================================================
-                    LOADING
-                ================================================= */}
+                {/* 
+                    Loading
+              = */}
 
                 {loading ? (
 
@@ -683,9 +504,9 @@ const Movies = () => {
 
                 ) : movies.length === 0 ? (
 
-                    /* =================================================
-                       EMPTY STATE
-                    ================================================= */
+                    /* 
+                       Empty state if no movies found
+                */
 
                     <div className="movies-empty">
 
@@ -712,9 +533,9 @@ const Movies = () => {
 
                 ) : (
 
-                    /* =================================================
-                       MOVIE GRID
-                    ================================================= */
+                    /*
+                       Movie Grid
+             */
 
                     <div className="row movie-grid">
 

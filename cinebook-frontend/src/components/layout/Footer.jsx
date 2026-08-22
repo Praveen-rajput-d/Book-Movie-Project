@@ -1,19 +1,3 @@
-// import React from 'react'
-
-// const Footer = () => {
-//   return (
-// <footer className="bg-dark text-white text-center p-3 mt-5">
-//     @2026 Cinebook | All Rights Reserved
-// </footer>
-//   )
-// }
-
-// export default Footer
-
-
-
-
-
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css";

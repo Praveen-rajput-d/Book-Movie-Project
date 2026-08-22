@@ -1,169 +1,3 @@
-// import React, { useEffect, useState } from 'react'
-// import { useParams } from 'react-router-dom';
-// import { getTicketById } from '../../services/ticketService';
-// import { downloadTicket } from '../../services/downloadService';
-
-// const TicketDetails = () => {
-   
-//     const{id}=useParams();
-    
-//     const[ticket,setTicket]=useState(null);
-//     useEffect(()=>{
-//      fetchTicket();
-//     },[])
-//     const fetchTicket=async()=>{
-//         try{
-//             // console.log("Ticket ID:",id);
-//          const response=await getTicketById(id);
-//          console.log(response.data);
-//         setTicket(response.data);
-//         }catch(error){
-//             console.log(error);
-//         }
-//     }
-
-//     //download ticket
-//     const handledownload= async()=>{
-  
-//              console.log("Ticket Id:",id);
-//             try{
-//                 const response=await downloadTicket(id);
-//                   console.log(response);
-//                 const blob=new Blob(
-//                     [response.data],
-//                     {
-//                         type:"application/pdf"
-//                     }
-//                 );
-//                 const url=window.URL.createObjectURL(blob);
-//                 const link=document.createElement("a");
-//                 link.href=url;
-//                 link.download=`ticket_${id}.pdf`;
-//                 document.body.appendChild(link);
-//                 link.click();
-//                 link.remove();
-//                 window.URL.revokeObjectURL(url);
-                
-//             }
-//             catch(error){
-//                 console.log(error);
-         
-//             }
-//     }
-
-//     if(!ticket){
-//         return(
-//             <div className="text-center mt-5">Loading Ticket...</div>
-//         );
-//     }
-//   return (
-//    <div className="container mt-5">  
-//     <div className="row justify-content-center">
-//         <div className="col-md-8">
-
-//             <div className="card shadow-lg border-0">
-
-//                 <div className="card-header bg-danger text-white text-center">
-//                     <h2>{ticket.movieName}</h2>
-//                     <h5>CineBook E-Ticket</h5>
-//                 </div>
-
-//                 <div className="card-body">
-
-//                     <div className="row">
-
-//                         <div className="col-md-6">
-//                             <p><strong>Ticket No:</strong></p>
-//                             <p>{ticket.ticketNumber}</p>
-//                         </div>
-
-//                         <div className="col-md-6">
-//                             <p><strong>Booking No:</strong></p>
-//                             <p>{ticket.bookingNumber}</p>
-//                         </div>
-
-//                     </div>
-
-//                     <hr/>
-
-//                     <div className="row">
-
-//                         <div className="col-md-6">
-//                             <p><strong>Theatre</strong></p>
-//                             <p>{ticket.theatreName}</p>
-//                         </div>
-
-//                         <div className="col-md-6">
-//                             <p><strong>Screen</strong></p>
-//                             <p>{ticket.screenName}</p>
-//                         </div>
-
-//                     </div>
-
-//                     <div className="row">
-
-//                         <div className="col-md-4">
-//                             <p><strong>Date</strong></p>
-//                             <p>{ticket.showDate}</p>
-//                         </div>
-
-//                         <div className="col-md-4">
-//                             <p><strong>Time</strong></p>
-//                             <p>{ticket.showTime}</p>
-//                         </div>
-
-//                         <div className="col-md-4">
-//                             <p><strong>Seats</strong></p>
-//                             <p>{ticket.seatNumbers.join(", ")}</p>
-//                         </div>
-
-//                     </div>
-
-//                     <hr/>
-
-//                     <h4 className="text-success">
-//                         ₹ {ticket.totalAmount}
-//                     </h4>
-
-//                     <span className={`badge ${
-//                         ticket.ticketStatus === "ACTIVE"
-//                             ? "bg-success"
-//                             : ticket.ticketStatus === "USED"
-//                             ? "bg-secondary"
-//                             : "bg-danger"
-//                     }`}>
-//                         {ticket.ticketStatus}
-//                     </span>
-
-//                     <hr/>
-
-//                     <small className="text-muted">
-//                         Generated :
-//                         <br/>
-//                         {ticket.generatedAt}
-//                     </small>
-
-//                 </div>
-
-//             </div>
-//             <div className="text-center mt-5 " >
-//                     <button className="btn btn-primary" onClick={handledownload}>Download Ticket</button>
-//             </div>
-
-                    
-           
-
-//         </div>
-//     </div>
-// </div>
-//   )
-// }
-
-// export default TicketDetails
-
-
-
-
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getTicketById } from "../../services/ticketService";
@@ -179,7 +13,7 @@ const TicketDetails = () => {
   const [ticket, setTicket] = useState(null);
 
 
-  // ================= FETCH TICKET =================
+  //fetch ticket
 
   useEffect(() => {
     fetchTicket();
@@ -210,7 +44,7 @@ const TicketDetails = () => {
   };
 
 
-  // ================= DOWNLOAD TICKET =================
+  //ticket download function
 
   const handledownload = async () => {
 
@@ -253,7 +87,7 @@ const TicketDetails = () => {
   };
 
 
-  // ================= LOADING =================
+  //loading part of ticket
 
   if (!ticket) {
 
@@ -281,7 +115,7 @@ const TicketDetails = () => {
       <div className="container">
 
 
-        {/* ================= PAGE HEADER ================= */}
+        {/*Page header */}
 
         <div className="ticket-details-heading">
 
@@ -307,12 +141,12 @@ const TicketDetails = () => {
         </div>
 
 
-        {/* ================= MAIN TICKET ================= */}
+        {/* Main Ticket */}
 
         <div className="cinema-ticket">
 
 
-          {/* ================= TICKET TOP ================= */}
+          {/*Ticket Top */}
 
           <div className="cinema-ticket-top">
 
@@ -360,7 +194,7 @@ const TicketDetails = () => {
           </div>
 
 
-          {/* ================= MOVIE INFORMATION ================= */}
+          {/*Movie Information */}
 
           <div className="movie-ticket-section">
 
@@ -375,7 +209,7 @@ const TicketDetails = () => {
           </div>
 
 
-          {/* ================= DOTTED DIVIDER ================= */}
+          {/* Dotted Divider */}
 
           <div className="ticket-divider">
 
@@ -384,7 +218,7 @@ const TicketDetails = () => {
           </div>
 
 
-          {/* ================= TICKET NUMBERS ================= */}
+          {/* Ticket Numbers */}
 
           <div className="ticket-number-section">
 
@@ -415,7 +249,7 @@ const TicketDetails = () => {
           </div>
 
 
-          {/* ================= SHOW DETAILS ================= */}
+          {/* Show Details */}
 
           <div className="show-details-grid">
 
@@ -576,7 +410,7 @@ const TicketDetails = () => {
           )}
          </div>
 
-          {/* ================= TICKET DIVIDER ================= */}
+          {/*ticket Divider */}
 
           <div className="ticket-divider ticket-divider-bottom">
 
@@ -585,7 +419,7 @@ const TicketDetails = () => {
           </div>
 
 
-          {/* ================= FOOTER ================= */}
+          {/*Footer part */}
 
           <div className="ticket-bottom">
 
@@ -619,7 +453,7 @@ const TicketDetails = () => {
         </div>
 
 
-        {/* ================= ACTIONS ================= */}
+        {/*Actions */}
 
         <div className="ticket-actions">
 

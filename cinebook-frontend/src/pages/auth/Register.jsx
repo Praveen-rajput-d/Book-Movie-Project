@@ -1,95 +1,3 @@
-// import { useState } from "react";
-// import { Link, useNavigate } from "react-router-dom";
-// import { registerUser } from "../../services/authService";
-
-// function Register() {
-//   //usestate is used to store the data of the user
-//  const [user, setUser] = useState({
-//         firstName: "",
-//         lastName: "",
-//         email: "",
-//         password: "",
-//         phone: "",
-//         roleId: 2
-//     });
-//   const navigate=useNavigate();
-
-//     const handleChange = (e) => {
-//         setUser({
-//             ...user,
-//             [e.target.name]: e.target.value
-//         });
-//     };
-
-//     const handleSubmit=async(e)=>{
-//       e.preventDefault();
-//       try{
-//         const response=await registerUser(user);
-//         alert("Registration Successful!");
-//         console.log(response.data);
-//         navigate("/login");
-//       }catch(error){
-//         console.log(error);
-//         alert("Registration Failed!");
-//       }
-//     };
-
-    
-
-           
-//     return (
-//        <div className="container mt-5">
-//         <div  className="row justify-content-center">
-//           <div className="col-md-6">
-//             <div className="card shadow-lg border-0">
-//               <div className="card-body p-4">
-//                 <h2 className="text-center text-danger fw-bold mb-4">Create Account</h2>
-             
-//                 <form onSubmit={handleSubmit}>
-//                   <div className="mb-3">
-//                     <label className="form-label">First Name</label>
-//                     <input type="text" className="form-control" placeholder="Enter First Name" name="firstName" value={user.firstName} onChange={handleChange}/>
-//                   </div>
-
-//                     <div className="mb-3">
-//                     <label className="form-label">Last Name</label>
-//                     <input type="text" className="form-control" placeholder="Enter Last Name" name="lastName" value={user.lastName} onChange={handleChange}/>
-//                   </div>
-
-//                     <div className="mb-3">
-//                     <label className="form-label">Email</label>
-//                     <input type="email" className="form-control" placeholder="Enter Email" name="email" value={user.email} onChange={handleChange}/>
-//                   </div>
-
-//                     <div className="mb-3">
-//                     <label className="form-label">Password</label>
-//                     <input type="password" className="form-control" placeholder="Enter Password" name="password" value={user.password} onChange={handleChange}/>
-//                   </div>
-
-//                     <div className="mb-3">
-//                     <label className="form-label">Phone Number</label>
-//                     <input type="text" className="form-control" placeholder="Enter Phone Number" name="phone" value={user.phone} onChange={handleChange}/>
-//                   </div>
-//                   <button className="btn btn-danger w-100" type="submit">Register</button>
-//                 </form>
-//                 <hr/>
-//                 <p className="text-center mb-0">Already have an account?
-//                   <Link to="/login" className="ms-2 text-decoration-none">Login</Link>
-//                 </p>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//        </div>
-//     );
-
-// }
-
-// export default Register;
-
-
-
-
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { registerUser } from "../../services/authService";
@@ -111,9 +19,9 @@ function Register() {
     const navigate = useNavigate();
 
 
-    // =====================================================
-    // HANDLE INPUT
-    // =====================================================
+    
+    // handle input
+   
 
     const handleChange = (e) => {
 
@@ -125,9 +33,8 @@ function Register() {
     };
 
 
-    // =====================================================
-    // REGISTER
-    // =====================================================
+    // Register button function
+
 
     const handleSubmit = async (e) => {
 
@@ -162,18 +69,18 @@ function Register() {
         <div className="cine-register-page">
 
 
-            {/* =================================================
-                BACKGROUND
-            ================================================= */}
+            {/*
+                Background
+           */}
 
             <div className="cine-register-background"></div>
 
             <div className="cine-register-overlay"></div>
 
 
-            {/* =================================================
-                REGISTER CONTAINER
-            ================================================= */}
+            {/* 
+                Registration container
+         */}
 
             <div className="container cine-register-container">
 
@@ -182,9 +89,9 @@ function Register() {
                     <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">
 
 
-                        {/* =================================================
+                        {/* 
                             REGISTER CARD
-                        ================================================= */}
+                      */}
 
                         <div className="cine-register-card">
 
@@ -210,9 +117,9 @@ function Register() {
                             </p>
 
 
-                            {/* =================================================
-                                FORM
-                            ================================================= */}
+                            {/*
+                                Form for registration page
+                           */}
 
                             <form onSubmit={handleSubmit}>
 

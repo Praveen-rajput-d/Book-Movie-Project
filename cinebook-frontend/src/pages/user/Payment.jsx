@@ -1,70 +1,3 @@
-// import React, { useState } from 'react'
-// import { useNavigate } from 'react-router-dom';
-// import { processPayment } from '../../services/Payment';
-
-// const Payment = () => {
-//     const navigate=useNavigate();
-//     const bookingId=localStorage.getItem("bookedId");
-//     const[payment,setpayment]=useState({
-//         bookingId:bookingId,
-//         paymentMethod:"UPI"
-//     });
-
-//     const handlechange=(e)=>{
-//         setpayment({
-//             ...payment,
-//             [e.target.name]:e.target.value
-//         });
-//     };
-     
-//     const handleSubmit=async(e)=>{
-//         e.preventDefault();
-//         try{
-//             const response=await processPayment(payment);
-//             console.log(response.data);
-//             alert("Payment SuccessFull")
-//             navigate("/mytickets");
-//         }catch(error){
-//             console.log(error);
-//             alert("payment Failed")
-//         }
-//     }
-//   return (
-//     <div className="container mt-5">
-//         <div className="row justify-content-center">
-//             <div className="col-md-6">
-//                 <div className="card shadow-lg">
-//                     <div className="card-body">
-//                         <h2 className="text-center text-danger mb-4">Payment</h2>
-//                         <form onSubmit={handleSubmit}>
-//                             <div className="mb-3">
-//                                 <label className="form-label">Booking ID</label>
-//                                 <input className="form-control" value={bookingId||""} disabled />
-//                             </div>
-//                             <div className="mb-3">
-//                                 <label className="form-label">Payment Method</label>
-//                                 <select className="form-select" name="paymentMethod" value={payment.paymentMethod} onChange={handlechange}>
-//                                     <option value="UPI">UPI</option>
-//                                       <option value="CARD">CARD</option>
-//                                         <option value="NET_BANKING">NET_BANKING</option>
-//                                           <option value="CASH">CASH</option>
-//                                 </select>
-//                             </div>
-//                             <button className="btn btn-danger w-100" type="submit">Pay Now</button>
-//                         </form>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     </div>
-//   )
-// }
-
-// export default Payment
-
-
-
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { createRazorpayOrder, processPayment, verifyRazorpayPayment } from "../../services/Payment";
@@ -84,7 +17,7 @@ const Payment = () => {
     });
 
 
-    // ================= HANDLE CHANGE =================
+    //Handle Change payment
 
     const handlechange = (e) => {
 
@@ -96,7 +29,7 @@ const Payment = () => {
     };
 
 
-    // ================= PAYMENT =================
+    // Payemnt function submit btton
 
     const handleSubmit = async (e) => {
 
@@ -155,80 +88,7 @@ const Payment = () => {
         });
     }
 
-    // const handleRazorpayment=async()=>{
-    //     try{
-    //         if(!bookingId){
-    //             alert("Booking ID not Found");
-    //             return;
-    //         }
-    //         const isLoaded=await loadRazorpayScript();
-    //         if(!isLoaded){
-    //             alert("Razorpay SDK failed to load");
-    //             return;
-    //         }
-    //         //create the order of razorpay
-    //         console.log("Create order Response:",response);
-    //         const response=await createRazorpayOrder(Number(bookingId));
-    //         console.log("Create Order Response:",response);
-    //         const order=response.data;
-    //         console.log("RazorpayOrder:",order);
-    //        if(!order||!order.orderId){
-    //         alert("Razorpay Order Was not created");
-    //         return;
-    //        }
-    //         //open razorpay checkout
-    //         const options={
-    //             key:"rzp_test_TRh09syeNDHPgm",
-    //           amount:order.amount,
-    //           currency:order.currency,
-    //           name:"BookMovie",
-    //           description:"Movie Ticket Booking",
-    //           order_id:order.orderId,
-    //           handler:  async function(paymentResponse){
-    //            try{
-    //             console.log("Razorpay payment Response:",paymentResponse);
-    //             const verifyData={
-    //                 bookingId:Number(bookingId),
-    //                 razorpayPaymentId:
-    //                 paymentResponse.razorpay_payment_id,
-    //                 razorpayOrderId:
-    //                 paymentResponse.razorpay_order_id,
-    //                 razorpaySignature:paymentResponse.razorpay_signature
-    //             };
-    //             const verifyresponse=await verifyRazorpayPayment(verifyData);
-    //             console.log("Verification Response:",verifyresponse.data);
-    //             if(verifyresponse.data.success){
-    //                 alert("Payment Successfull! Booking Confirmed");
-    //                 localStorage.removeItem("bookingId");
-
-    //                 navigate(`/booking/${bookingId}`);
-    //             }
-    //            }catch(error){
-    //             console.error("Payment Verification Error:",error);
-    //             console.error("Backend Response:",error.response?.data);
-                
-    //             alert(error.response?.data?.message||"Payment Verification Failed");
-    //            }
-    //           },
-    //           prefill:{
-    //             name:"",
-    //             email:"",
-    //             contact:""
-    //           },
-    //           theme:{
-    //             color:"#e50914"
-    //           }
-    //         };
-    //         console.log("opening Razorpay...");
-    //         const razorpay=new window.Razorpay(options);
-    //         razorpay.open();
-
-    //     }catch(error){
-    //         console.error("Razorpay Error:",error);
-    //         console.error("Backend Error Response:",error.response?.data);
-    //         alert(error.response?.data.message||"Unable to  start payment");
-    //     }
-    // }
+   
 
     const handleRazorpayment = async () => {
     try {
@@ -408,7 +268,7 @@ const Payment = () => {
             <div className="container">
 
 
-                {/* ================= HEADER ================= */}
+                {/* Payment Header part= */}
 
                 <div className="payment-header">
 
@@ -431,12 +291,12 @@ const Payment = () => {
                 </div>
 
 
-                {/* ================= PAYMENT LAYOUT ================= */}
+                {/* Payment layout */}
 
                 <div className="payment-layout">
 
 
-                    {/* ================= PAYMENT FORM ================= */}
+                    {/* Payment Form  */}
 
                     <div className="payment-card">
 
@@ -579,7 +439,7 @@ const Payment = () => {
                                     </label>
 
 
-                                    {/* NET BANKING */}
+                                    {/* Net Banking*/}
 
                                     <label
                                         className={`payment-method ${
@@ -693,23 +553,6 @@ const Payment = () => {
                         </form>
 
                     </div>
-
-
-                   
-                           
-                     
-                        
-                     
-
-
-                        
-
-                        
-
-                      
-
-                           
-
                 </div>
 
             </div>

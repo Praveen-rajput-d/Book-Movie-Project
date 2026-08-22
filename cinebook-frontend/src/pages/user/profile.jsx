@@ -1,190 +1,3 @@
-// import React, { useEffect, useState } from 'react'
-// import {  changepassoword,  getMyProfile, updateProfile } from '../../services/profileService';
-// import { useNavigate } from 'react-router-dom';
-
-// const profile = () => {
-//     const[profile,setProfile]=useState(null);
-//     const[editmode,setEditMode]=useState(false);
-//     //for updation of profile
-//     const[formdata,setFormdata]=useState({
-//       firstName:"",
-//       lastName:"",
-//       phone:""
-//     });
-//     //for changing the password
-//     const[editpassword,setEditpassword]=useState(false);
-//     const[formpassword,setFormpassword]=useState({
-//       oldPassword:"",
-//       newPassword:"",
-//       confirmPassword:""
-//     });
-
-//     const navigate=useNavigate();
-//     useEffect(()=>{
-//   fetchProfile();
-//     },[])
-//     const fetchProfile=async ()=>{
-//        try{
-//          const response=await getMyProfile();
-//          console.log(response.data);
-//          setProfile(response.data);
-//          setFormdata({
-//           firstName:response.data.firstName,
-//           lastName:response.data.lastName,
-//           phone:response.data.phone
-//          });
-//        }catch(error){
-//         console.log(error);
-//        }
-//     }
-
-//     const handleChange=(e)=>{
-//       setFormdata({
-//         ...formdata,
-//         [e.target.name]:e.target.value
-//       });
-//     };
-//       const handlepassword=(e)=>{
-//     setFormpassword({
-//       ...formpassword,
-//       [e.target.name]:e.target.value
-//     })
-//   }
-
-//     const handleupdate=async()=>{
-//        try{
-//         await updateProfile(formdata);
-//         alert("Profile Updated Successfully");
-//         setEditMode(false);
-//         fetchProfile();
-//        }catch(error){
-//         console.log(error);
-//         alert("failed to update profile");
-//        }
-//     };
-//     const handleChangePassword=async()=>{
-//       try{
-//          await changepassoword(formpassword)
-//          alert("Password changes is sucessfull");
-//          setEditpassword(false);
-//          setFormpassword({
-//           oldPassword:"",
-//           newPassword:"",
-//             confirmPassword:""
-//          });
-      
-//       }catch(error){
-//         console.log(error);
-
-//             alert(error.response?.data?.message||"Failed to Change Password");
-//       }
-//     }
-
-//     if(!profile){
-//         return(
-//         <div className="text-center mt-5">Loading Profile....</div>
-//         )
-//     }
-//   return (
-//     <div className="container mt-5">
-//         <div className="card shadow-lg">
-//             <div className="card-header bg-danger text-white text-center">
-//                 <h2>My Profile</h2>
-//             </div>
-//             <div className="card-body">
-//                 <p>
-//                     <strong>First Name:</strong>
-//                     {
-//                       editmode?<input className="form-control" name="firstName"
-//                       value={formdata.firstName} onChange={handleChange}/>:profile.firstName
-//                     }
-//                 </p>
-//                   <p>
-//                     <strong>Last Name:</strong>
-//                     {
-//                       editmode?<input className="form-control" name="lastName"
-//                       value={formdata.lastName} onChange={handleChange}/>:profile.lastName
-                    
-//                     }
-//                 </p>
-//                   <p>
-//                     <strong>Email:</strong>{profile.email}
-//                 </p>
-//                   <p>
-//                     <strong>Phone:</strong>{
-//                       editmode?<input className="form-control" name="phone" value={formdata.phone} onChange={handleChange}/>:profile.phone
-//                     }
-                   
-//                 </p>
-//                   <p>
-//                     <strong>Role:</strong>{profile.role}
-//                 </p>
-
-//                   <p>
-//                     <strong>joined:</strong>{profile.createAt}
-//                 </p>
-//                 <hr/>
-//                   {
-//                     editmode? <button className="btn btn-success me-2" onClick={handleupdate}>Save Changes</button>
-//                     :<button className="btn btn-primary me-2" onClick={()=>setEditMode(true)}>Edit Profile</button>
-//                   }
-
-//                   <button className="btn btn-warning" onClick={()=>setEditpassword(!editpassword)}>Change Password</button>
-//                  {
-//     editpassword&& (
-
-//         <div className="mt-4">
-
-//             <h5>Change Password</h5>
-
-//             <input
-//                 type="password"
-//                 className="form-control mb-2"
-//                 placeholder="Old Password"
-//                 name="oldPassword"
-//                 value={formpassword.oldPassword}
-//                 onChange={handlepassword}
-//             />
-
-//             <input
-//                 type="password"
-//                 className="form-control mb-2"
-//                 placeholder="New Password"
-//                 name="newPassword"
-//                 value={formpassword.newPassword}
-//                 onChange={handlepassword}
-//             />
-
-//             <input
-//                 type="password"
-//                 className="form-control mb-3"
-//                 placeholder="Confirm Password"
-//                 name="confirmPassword"
-//                 value={formpassword.confirmPassword}
-//                 onChange={handlepassword}
-//             />
-
-//             <button
-//                 className="btn btn-success"
-//                 onClick={handleChangePassword}
-//             >
-//                 Update Password
-//             </button>
-
-//         </div>
-
-//     )
-// }
-//             </div>
-//         </div>
-//     </div>
-//   )
-// }
-
-// export default profile
-
-
-
 import React, { useEffect, useState } from "react";
 import {
   changepassoword,
@@ -337,7 +150,7 @@ const Profile = () => {
 
       <div className="container">
 
-        {/* ================= PROFILE HEADER ================= */}
+        {/* Profile Header */}
 
         <div className="profile-header">
 
@@ -364,7 +177,7 @@ const Profile = () => {
         </div>
 
 
-        {/* ================= PROFILE CARD ================= */}
+        {/*Profile Card */}
 
         <div className="profile-card">
 
@@ -380,7 +193,7 @@ const Profile = () => {
 
           <div className="profile-details">
 
-            {/* FIRST NAME */}
+            {/* First Name */}
 
             <div className="profile-field">
 
@@ -407,7 +220,7 @@ const Profile = () => {
             </div>
 
 
-            {/* LAST NAME */}
+            {/*  last Name*/}
 
             <div className="profile-field">
 
@@ -434,7 +247,7 @@ const Profile = () => {
             </div>
 
 
-            {/* EMAIL */}
+            {/* Email */}
 
             <div className="profile-field">
 
@@ -447,7 +260,7 @@ const Profile = () => {
             </div>
 
 
-            {/* PHONE */}
+            {/* Phone */}
 
             <div className="profile-field">
 
@@ -487,7 +300,7 @@ const Profile = () => {
             </div>
 
 
-            {/* JOINED */}
+            {/* Joined */}
 
             <div className="profile-field">
 
@@ -502,7 +315,7 @@ const Profile = () => {
           </div>
 
 
-          {/* ================= PROFILE BUTTONS ================= */}
+          {/* Profile Buttons */}
 
           <div className="profile-actions">
 
@@ -553,7 +366,7 @@ const Profile = () => {
           </div>
 
 
-          {/* ================= CHANGE PASSWORD ================= */}
+          {/*Change passowrd */}
 
           {editpassword && (
 

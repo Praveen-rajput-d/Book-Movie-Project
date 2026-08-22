@@ -1,61 +1,3 @@
-// import React, { useEffect, useState } from 'react'
-// import { useParams } from 'react-router-dom';
-// import { getShowsByMovie } from '../../services/movieService';
-// import { Link} from 'react-router-dom';
-
-// const SelectShow = () => {
-//    const[shows,setShows]=useState([]);
-//    const{id}=useParams();
-//    useEffect(()=>{
-//     fetchshows();
-//    },[]);
-//    function fetchshows(){
-//     getShowsByMovie(id).then((Response)=>{
-//         console.log(Response.data);
-//         setShows(Response.data);
-//     })
-//     .catch((error)=>{
-//         console.error(error);
-//     })
-//    }
-   
-//   return (
-//     <div className="container mt-5">
-//         <h2 className="text-center mb-5">🎬 Available Shows</h2>
-//         {
-//          shows.length===0 ? <div className="text-center">
-//             <h3>No Shows Available</h3>
-//             </div>
-//             :shows.map((show)=>(
-//             <div className="card shadow-lg mb-4 border-0" key={show.id}>
-//                 <div className="card-body">
-//                     <div className="row align-items-center">
-//                         <div className="col-md-8">
-//                             <h3 className="fw-bold"> 🏢 {show.theaterName}</h3>
-//                             <h5 className="text-secondary">  📺 {show.screenName}</h5>
-//                             <p className="mb-1">📅 {show.showDate}</p>
-//                              <p className="mb-1">  ⏰ {show.startTime}</p>
-//                              <span className="badge bg-success">  ₹ {show.ticketPrice}</span>
-//                         </div>
-//                         <div className="col-md-4 text-end">
-//                            <Link to={`/seat-selection/${show.id}`}
-//                            className="btn btn-danger">Select Seats</Link>
-//                         </div>
-//                 </div>
-//                 </div>
-//                 </div>
-//          ))   
-//         }
-//     </div>
-//   );
-// }
-
-// export default SelectShow
-
-
-
-
-
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getShowsByMovie } from "../../services/movieService";
@@ -68,7 +10,7 @@ const SelectShow = () => {
     const { id } = useParams();
 
 
-    // ================= FETCH SHOWS =================
+    // Fetch Shows
 
     useEffect(() => {
 
@@ -102,7 +44,7 @@ const SelectShow = () => {
             <div className="container">
 
 
-                {/* ================= HEADER ================= */}
+                {/*header part of the shows*/}
 
                 <div className="select-show-header">
 
@@ -125,7 +67,7 @@ const SelectShow = () => {
                 </div>
 
 
-                {/* ================= SHOW COUNT ================= */}
+                {/* Shows Count */}
 
                 {shows.length > 0 && (
 
@@ -142,7 +84,7 @@ const SelectShow = () => {
                 )}
 
 
-                {/* ================= NO SHOWS ================= */}
+                {/*if there is no shows*/}
 
                 {shows.length === 0 ? (
 
@@ -172,7 +114,7 @@ const SelectShow = () => {
 
                 ) : (
 
-                    /* ================= SHOW LIST ================= */
+                    /* Show List */
 
                     <div className="shows-grid">
 
@@ -184,7 +126,7 @@ const SelectShow = () => {
                             >
 
 
-                                {/* CARD HEADER */}
+                                {/* card header*/}
 
                                 <div className="show-card-header">
 
@@ -215,7 +157,7 @@ const SelectShow = () => {
                                 </div>
 
 
-                                {/* CARD BODY */}
+                                {/* Card body */}
 
                                 <div className="show-card-body">
 

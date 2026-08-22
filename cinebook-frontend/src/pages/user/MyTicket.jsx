@@ -1,100 +1,3 @@
-// import React, { useEffect, useState } from 'react'
-// import { getMyTickets } from '../../services/ticketService';
-// import { useNavigate } from 'react-router-dom';
-
-// const MyTicket  = () => {
-//     const[ticket,setTicket]=useState([]);
-//     const navigate=useNavigate();
-//     useEffect(()=>{
-//         fetchTickets();
-//     },[]);
-//     const fetchTickets=async()=>{
-//         try{
-//             const response=await getMyTickets();
-//             console.log(response.data);
-//             setTicket(response.data);
-//         }catch(error){
-//             console.log(error);
-//         }
-//     }
-//     // {
-//     //     ticket.map((ticket)=>{
-//     //         console.log(ticket.ticketStatus);
-//     //     })
-//     // }
-//   return (
-//     <div className="container mt-5">
-//         <h2 className="text-center">My Tickets</h2>
-//         <div className="row ">
-//             {
-//                 ticket.map((ticket)=>(
-                
-//                     <div className="col-md-6 mb-4" key={ticket.id}>
-                        
-//                         <div className="card shadow-lg border-0">
-
-//                            <div className="card-header bg-danger text-white text-center">
-//                             <h5 className=" mb-0">{ticket.movieName}
-                                
-//                             </h5>
-                                
-//                            </div>
-//                            <div className="card-body">
-//                             <p>
-//                                 <strong>Ticket No:</strong>{ticket.ticketNumber}
-//                             </p>
-//                                 <p>
-//                                 <strong>Booking No:</strong>{ticket.bookingNumber}
-//                             </p>
-//                                 <p>
-//                                 <strong>Theatre:</strong>{ticket.theatreName}
-//                             </p>
-//                                 <p>
-//                                 <strong>Seat  No:</strong>{ticket.seatNumbers.join(",")}
-//                             </p>
-//                              <p>
-//                                 <strong>Show Date:</strong>{ticket.showDate}
-//                             </p>
-//                              <p>
-//                                 <strong>Show Time:</strong>{ticket.showTime}
-//                             </p>
-//                              <p>
-//                                 <strong>Amount:</strong>₹{ticket.totalAmount}
-//                             </p>
-                         
-//                             <p>  <span className={`badge ${
-//                                 ticket.ticketStatus==="ACTIVE"?"bg-success": ticket.ticketStatus==="USED"?"bg-secondary":"bg-danger"}`}>{ticket.ticketStatus}</span>
-//                             </p>
-                               
-                            
-                            
-                             
-//                             <hr/>
-//                             <div className="d-flex justify-content-between align-items-center">
-//                                 <small className="text-muted">Generated:
-//                                     <br/>
-//                                     {ticket.generatedAt}
-//                                 </small>
-//                                 <button className="btn btn-outline-danger btn-sm" onClick={()=>navigate(`/ticket/${ticket.id}`)}>View Ticket</button>
-//                            </div>
-//                            </div>
-//                            </div>
-//                            </div>
-//                 ))
-//             }
-//         </div>
-       
-//         </div>
-//   )
-// }
-
-
-// export default MyTicket
-
-
-
-
-
 import React, { useEffect, useState } from "react";
 import { getMyTickets } from "../../services/ticketService";
 import { useNavigate } from "react-router-dom";
@@ -135,7 +38,7 @@ const MyTicket = () => {
 
       <div className="container">
 
-        {/* ================= PAGE HEADER ================= */}
+        {/* page header */}
 
         <div className="ticket-page-header">
 
@@ -161,7 +64,7 @@ const MyTicket = () => {
         </div>
 
 
-        {/* ================= EMPTY STATE ================= */}
+        {/* Empty State */}
 
         {ticket.length === 0 ? (
 
@@ -191,7 +94,7 @@ const MyTicket = () => {
 
         ) : (
 
-          /* ================= TICKETS ================= */
+          /* Tickets */
 
           <div className="row g-4">
 
@@ -205,7 +108,7 @@ const MyTicket = () => {
                 <div className="ticket-card">
 
 
-                  {/* ================= TICKET HEADER ================= */}
+                  {/*Tickets header  */}
 
                   <div className="ticket-header">
 
@@ -246,7 +149,7 @@ const MyTicket = () => {
                   </div>
 
 
-                  {/* ================= TICKET BODY ================= */}
+                  {/*Ticket Body */}
 
                   <div className="ticket-body">
 
@@ -395,7 +298,7 @@ const MyTicket = () => {
                         </div>
 
 
-                    {/* ================= GENERATED ================= */}
+                    {/*Generated ticket date */}
 
                     <div className="ticket-generated">
 
@@ -412,7 +315,7 @@ const MyTicket = () => {
                   </div>
 
 
-                  {/* ================= TICKET FOOTER ================= */}
+                  {/*Ticket Foooter */}
 
                   <div className="ticket-footer">
 

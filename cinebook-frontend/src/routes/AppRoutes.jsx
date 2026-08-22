@@ -7,8 +7,6 @@ import { Outlet, Route,Routes } from 'react-router-dom';
 import Movies from '../pages/user/Movies';
 import MyBookings from '../pages/user/MyBookings';
 
-import Counter from '../pages/user/Counter';
-import UseEffectDemo from '../pages/user/UseEffectDemo';
 import MovieDetails from '../pages/user/MovieDetails';
 import SelectShow from '../pages/user/SelectShow';
 import ProtectedRoute from './ProtectedRoute';
@@ -54,8 +52,7 @@ const AppRoutes = () => {
     <Route path="/movies"element={<Movies/>}/>
    
 
-    <Route path="/counter"element={<Counter/>}/>
-    <Route path="/effect"element={<UseEffectDemo/>}/>
+   
     <Route path="/movie/:id"element={<MovieDetails/>}/>
     <Route path="/movie/:id/shows"element={<SelectShow/>}/>
     <Route path="/seat-selection/:showId" element={<SeatSelection/>}/>
