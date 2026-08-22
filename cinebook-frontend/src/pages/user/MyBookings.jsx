@@ -324,8 +324,10 @@ const MyBookings = () => {
 
                   
                     {
-                      booking.bookingStatus==="CANCELLED"?(
-                        <button className="btn btn-outline-secondary btn-sm" disabled>Ticket Unavailable</button>
+                      booking.bookingStatus==="CANCELLED"||booking.bookingStatus==="PENDING"?(
+                        <button className="btn btn-outline-secondary btn-sm" disabled>
+                          {booking.bookingStatus==="PENDING"?"Ticket Pending":"Ticket Unavailable"}
+                          </button>
                       )
                       :(
                         <button className="btn btn-outline-primary btn-sm"     onClick={() =>
