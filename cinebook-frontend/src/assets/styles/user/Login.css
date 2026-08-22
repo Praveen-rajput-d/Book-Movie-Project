@@ -1,0 +1,474 @@
+```css
+/* =====================================================
+   CINEBOOK LOGIN PAGE
+===================================================== */
+
+.cine-login-page {
+
+    position: relative;
+
+    min-height: calc(100vh - 70px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 45px 0;
+
+    background: #080808;
+
+    overflow: hidden;
+
+}
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+.cine-login-background {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba");
+
+    background-size: cover;
+
+    background-position: center;
+
+    filter: blur(5px);
+
+    transform: scale(1.05);
+
+    opacity: 0.3;
+
+}
+
+
+.cine-login-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.95),
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.95)
+        );
+
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.cine-login-container {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+/* =====================================================
+   LOGIN CARD
+===================================================== */
+
+.cine-login-card {
+
+    padding: 35px 32px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 15px;
+
+    background:
+        rgba(20, 20, 20, 0.92);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.55);
+
+    backdrop-filter: blur(15px);
+
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.cine-login-logo {
+
+    margin-bottom: 25px;
+
+    color: white;
+
+    font-size: 23px;
+
+    font-weight: 850;
+
+    text-align: center;
+
+}
+
+
+.cine-login-logo span {
+
+    margin-right: 6px;
+
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.cine-login-card h1 {
+
+    margin: 0;
+
+    color: white;
+
+    font-size: 28px;
+
+    font-weight: 800;
+
+    text-align: center;
+
+}
+
+
+.cine-login-subtitle {
+
+    margin:
+        8px 0 28px;
+
+    color: #888;
+
+    font-size: 11px;
+
+    text-align: center;
+
+}
+
+
+/* =====================================================
+   INPUT GROUP
+===================================================== */
+
+.cine-input-group {
+
+    margin-bottom: 20px;
+
+}
+
+
+.cine-input-group label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #ccc;
+
+    font-size: 10px;
+
+    font-weight: 650;
+
+}
+
+
+/* =====================================================
+   INPUT
+===================================================== */
+
+.cine-input-wrapper {
+
+    display: flex;
+
+    align-items: center;
+
+    height: 45px;
+
+    border:
+        1px solid #333;
+
+    border-radius: 7px;
+
+    background: #111;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.cine-input-wrapper:focus-within {
+
+    border-color: #e50914;
+
+    box-shadow:
+        0 0 0 3px rgba(229, 9, 20, 0.1);
+
+}
+
+
+.cine-input-wrapper span {
+
+    width: 42px;
+
+    text-align: center;
+
+    color: #777;
+
+    font-size: 13px;
+
+}
+
+
+.cine-input-wrapper input {
+
+    flex: 1;
+
+    height: 100%;
+
+    padding-right: 12px;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 11px;
+
+}
+
+
+.cine-input-wrapper input::placeholder {
+
+    color: #666;
+
+}
+
+
+/* =====================================================
+   LOGIN OPTIONS
+===================================================== */
+
+.cine-login-options {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin:
+        -5px 0 20px;
+
+}
+
+
+.cine-login-options a {
+
+    color: #e50914;
+
+    font-size: 10px;
+
+    text-decoration: none;
+
+}
+
+
+.cine-login-options a:hover {
+
+    color: #ff4b54;
+
+}
+
+
+/* =====================================================
+   LOGIN BUTTON
+===================================================== */
+
+.cine-login-button {
+
+    width: 100%;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #e50914;
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: 750;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.cine-login-button:hover {
+
+    background: #c70812;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 20px rgba(229, 9, 20, 0.25);
+
+}
+
+
+/* =====================================================
+   DIVIDER
+===================================================== */
+
+.cine-divider {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 25px 0;
+
+}
+
+
+.cine-divider::before,
+.cine-divider::after {
+
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #292929;
+
+}
+
+
+.cine-divider span {
+
+    color: #666;
+
+    font-size: 9px;
+
+}
+
+
+/* =====================================================
+   REGISTER
+===================================================== */
+
+.cine-register-text {
+
+    margin: 0;
+
+    color: #888;
+
+    font-size: 10px;
+
+    text-align: center;
+
+}
+
+
+.cine-register-text a {
+
+    margin-left: 5px;
+
+    color: #e50914;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+}
+
+
+.cine-register-text a:hover {
+
+    color: #ff4b54;
+
+}
+
+
+/* =====================================================
+   SECURITY
+===================================================== */
+
+.cine-login-security {
+
+    margin-top: 22px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #292929;
+
+    color: #555;
+
+    font-size: 8px;
+
+    text-align: center;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 576px) {
+
+    .cine-login-page {
+
+        padding:
+            25px 15px;
+
+    }
+
+    .cine-login-card {
+
+        padding:
+            30px 22px;
+
+    }
+
+    .cine-login-card h1 {
+
+        font-size: 25px;
+
+    }
+
+}
+

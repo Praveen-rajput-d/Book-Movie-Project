@@ -1,0 +1,464 @@
+
+/* =====================================================
+   CINEBOOK REGISTER PAGE
+===================================================== */
+
+
+.cine-register-page {
+    position: relative;
+
+    min-height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 50px 0 80px;
+
+    background: #080808;
+
+    overflow: hidden;
+}
+
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+.cine-register-background {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba");
+
+    background-size: cover;
+
+    background-position: center;
+
+    filter: blur(5px);
+
+    transform: scale(1.05);
+
+    opacity: 0.28;
+
+}
+
+
+.cine-register-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.96),
+            rgba(0, 0, 0, 0.78),
+            rgba(0, 0, 0, 0.96)
+        );
+
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.cine-register-container {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.cine-register-card {
+
+    padding: 32px 34px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 15px;
+
+    background:
+        rgba(20, 20, 20, 0.94);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.6);
+
+    backdrop-filter: blur(15px);
+
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.cine-register-logo {
+
+    margin-bottom: 18px;
+
+    color: white;
+
+    font-size: 22px;
+
+    font-weight: 850;
+
+    text-align: center;
+
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.cine-register-card h1 {
+
+    margin: 0;
+
+    color: white;
+
+    font-size: 27px;
+
+    font-weight: 800;
+
+    text-align: center;
+
+}
+
+
+.cine-register-subtitle {
+
+    max-width: 350px;
+
+    margin: 8px auto 25px;
+
+    color: #888;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+
+    text-align: center;
+
+}
+
+
+/* =====================================================
+   INPUT
+===================================================== */
+
+.cine-register-input {
+
+    margin-bottom: 17px;
+
+}
+
+
+.cine-register-input label {
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #ccc;
+
+    font-size: 9px;
+
+    font-weight: 650;
+
+}
+
+
+.cine-register-input input {
+
+    width: 100%;
+
+    height: 43px;
+
+    padding: 0 12px;
+
+    border:
+        1px solid #333;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    background: #111;
+
+    color: white;
+
+    font-size: 10px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.cine-register-input input::placeholder {
+
+    color: #666;
+
+}
+
+
+.cine-register-input input:focus {
+
+    border-color: #e50914;
+
+    box-shadow:
+        0 0 0 3px rgba(229, 9, 20, 0.1);
+
+}
+
+
+/* =====================================================
+   INPUT WITH ICON
+===================================================== */
+
+.cine-register-input-wrapper {
+
+    display: flex;
+
+    align-items: center;
+
+    height: 43px;
+
+    border:
+        1px solid #333;
+
+    border-radius: 7px;
+
+    background: #111;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.cine-register-input-wrapper:focus-within {
+
+    border-color: #e50914;
+
+    box-shadow:
+        0 0 0 3px rgba(229, 9, 20, 0.1);
+
+}
+
+
+.cine-register-input-wrapper span {
+
+    width: 40px;
+
+    color: #777;
+
+    font-size: 12px;
+
+    text-align: center;
+
+}
+
+
+.cine-register-input-wrapper input {
+
+    flex: 1;
+
+    height: 100%;
+
+    padding: 0 10px 0 0;
+
+    border: none;
+
+    box-shadow: none;
+
+}
+
+
+/* =====================================================
+   REGISTER BUTTON
+===================================================== */
+
+.cine-register-button {
+
+    width: 100%;
+
+    height: 44px;
+
+    margin-top: 4px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #e50914;
+
+    color: white;
+
+    font-size: 10px;
+
+    font-weight: 750;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.cine-register-button:hover {
+
+    background: #c70812;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 20px rgba(229, 9, 20, 0.25);
+
+}
+
+
+/* =====================================================
+   DIVIDER
+===================================================== */
+
+.cine-register-divider {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 22px 0;
+
+}
+
+
+.cine-register-divider::before,
+.cine-register-divider::after {
+
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #292929;
+
+}
+
+
+.cine-register-divider span {
+
+    color: #555;
+
+    font-size: 8px;
+
+}
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+.cine-login-text {
+
+    margin: 0;
+
+    color: #888;
+
+    font-size: 10px;
+
+    text-align: center;
+
+}
+
+
+.cine-login-text a {
+
+    margin-left: 5px;
+
+    color: #e50914;
+
+    font-weight: 750;
+
+    text-decoration: none;
+
+}
+
+
+.cine-login-text a:hover {
+
+    color: #ff4b54;
+
+}
+
+
+/* =====================================================
+   SECURITY
+===================================================== */
+
+.cine-register-security {
+
+    margin-top: 20px;
+
+    padding-top: 13px;
+
+    border-top: 1px solid #292929;
+
+    color: #555;
+
+    font-size: 8px;
+
+    text-align: center;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 576px) {
+
+    .cine-register-page {
+
+        padding: 25px 15px;
+
+    }
+
+    .cine-register-card {
+
+        padding: 28px 20px;
+
+    }
+
+    .cine-register-card h1 {
+
+        font-size: 24px;
+
+    }
+
+}
+

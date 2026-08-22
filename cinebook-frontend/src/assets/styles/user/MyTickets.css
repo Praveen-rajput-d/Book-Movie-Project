@@ -1,0 +1,651 @@
+```css
+/* =====================================================
+   CINEBOOK - MY TICKETS
+===================================================== */
+
+.my-ticket-page {
+    min-height: calc(100vh - 70px);
+
+    background: #f6f7f9;
+
+    padding: 45px 0 70px;
+}
+
+
+/* =====================================================
+   PAGE HEADER
+===================================================== */
+
+.ticket-page-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+}
+
+.ticket-page-header h2 {
+    margin: 0;
+
+    color: #222;
+
+    font-size: 30px;
+
+    font-weight: 750;
+}
+
+.ticket-page-header p {
+    margin: 7px 0 0;
+
+    color: #888;
+
+    font-size: 14px;
+}
+
+
+/* Ticket count */
+
+.ticket-count {
+    background: #111;
+
+    color: #fff;
+
+    padding: 9px 17px;
+
+    border-radius: 25px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   TICKET CARD
+===================================================== */
+
+.ticket-card {
+    height: 100%;
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    border: 1px solid #eeeeee;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.ticket-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =====================================================
+   TICKET HEADER
+===================================================== */
+
+.ticket-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 20px;
+
+    background: linear-gradient(
+        135deg,
+        #111111,
+        #252525
+    );
+
+    color: white;
+}
+
+
+/* Movie icon */
+
+.ticket-movie-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background: #e50914;
+
+    font-size: 22px;
+}
+
+
+/* Movie information */
+
+.ticket-movie-info {
+    min-width: 0;
+
+    flex: 1;
+}
+
+.ticket-movie-info h4 {
+    margin: 0;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.ticket-movie-info span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #aaa;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   TICKET STATUS
+===================================================== */
+
+.ticket-status {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    flex-shrink: 0;
+}
+
+
+/* Status dot */
+
+.ticket-status-dot {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: currentColor;
+}
+
+
+/* Active */
+
+.ticket-active {
+    color: #51d88a;
+
+    background: rgba(25, 135, 84, 0.15);
+}
+
+
+/* Used */
+
+.ticket-used {
+    color: #aaa;
+
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* Cancelled */
+
+.ticket-cancelled {
+    color: #ff6b6b;
+
+    background: rgba(220, 53, 69, 0.15);
+}
+
+
+/* =====================================================
+   TICKET BODY
+===================================================== */
+
+.ticket-body {
+    padding: 22px;
+}
+
+
+/* =====================================================
+   TICKET INFORMATION
+===================================================== */
+
+.ticket-info-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 17px;
+}
+
+.ticket-info-icon {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: #f7f7f7;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+}
+
+.ticket-info-item div {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.ticket-info-item small {
+    color: #999;
+
+    font-size: 11px;
+
+    margin-bottom: 2px;
+}
+
+.ticket-info-item strong {
+    color: #333;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   AMOUNT
+===================================================== */
+
+.ticket-amount {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 20px;
+
+    padding-top: 17px;
+
+    border-top: 1px dashed #ddd;
+}
+
+.ticket-amount span {
+    color: #777;
+
+    font-size: 13px;
+}
+
+.ticket-amount strong {
+    color: #e50914;
+
+    font-size: 21px;
+
+    font-weight: 750;
+}
+
+
+/* =====================================================
+   GENERATED TIME
+===================================================== */
+
+.ticket-generated {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 15px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #eeeeee;
+}
+
+.ticket-generated span {
+    color: #999;
+
+    font-size: 11px;
+}
+
+.ticket-generated strong {
+    color: #555;
+
+    font-size: 11px;
+
+    font-weight: 500;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.ticket-footer {
+    padding: 16px 22px;
+
+    background: #fafafa;
+
+    border-top: 1px solid #eeeeee;
+}
+
+
+/* View ticket */
+
+.view-full-ticket-btn {
+    width: 100%;
+
+    min-height: 42px;
+
+    border: 1px solid #e50914;
+
+    border-radius: 8px;
+
+    background: white;
+
+    color: #e50914;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.view-full-ticket-btn:hover {
+    background: #e50914;
+
+    color: white;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 15px rgba(229, 9, 20, 0.2);
+}
+
+
+/* =====================================================
+   EMPTY TICKETS
+===================================================== */
+
+.empty-tickets {
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 70px 25px;
+
+    text-align: center;
+
+    border: 1px solid #eeeeee;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+
+.empty-ticket-icon {
+    width: 80px;
+    height: 80px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fff0f0;
+
+    font-size: 34px;
+}
+
+
+.empty-tickets h3 {
+    margin: 0 0 8px;
+
+    color: #222;
+
+    font-size: 22px;
+
+    font-weight: 700;
+}
+
+
+.empty-tickets p {
+    max-width: 450px;
+
+    margin: 0 auto 25px;
+
+    color: #888;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* Browse movies */
+
+.browse-ticket-btn {
+    border: none;
+
+    background: #e50914;
+
+    color: white;
+
+    padding: 11px 22px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.browse-ticket-btn:hover {
+    background: #c70812;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 18px rgba(229, 9, 20, 0.25);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .my-ticket-page {
+        padding: 30px 0 50px;
+    }
+
+    .ticket-page-header {
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .ticket-page-header h2 {
+        font-size: 25px;
+    }
+
+    .ticket-count {
+        font-size: 11px;
+
+        padding: 7px 12px;
+    }
+
+    .ticket-header {
+        padding: 17px;
+    }
+
+    .ticket-body {
+        padding: 18px;
+    }
+
+    .ticket-footer {
+        padding: 14px 18px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 576px) {
+
+    .my-ticket-page {
+        padding: 25px 0 45px;
+    }
+
+    .ticket-page-header {
+        flex-direction: column;
+    }
+
+    .ticket-page-header h2 {
+        font-size: 23px;
+    }
+
+    .ticket-count {
+        align-self: flex-start;
+    }
+
+    .ticket-movie-info h4 {
+        font-size: 16px;
+    }
+
+    .ticket-status {
+        font-size: 9px;
+
+        padding: 4px 7px;
+    }
+
+    .ticket-movie-icon {
+        width: 44px;
+        height: 44px;
+
+        font-size: 19px;
+    }
+
+    .ticket-amount strong {
+        font-size: 18px;
+    }
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .ticket-header {
+        flex-wrap: wrap;
+    }
+
+    .ticket-status {
+        margin-left: auto;
+    }
+
+}
+
+/* ================= TICKET QR CODE ================= */
+
+.ticket-qr-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed #ddd;
+    text-align: center;
+}
+
+.ticket-qr-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.ticket-qr-info small {
+    color: #777;
+    font-size: 13px;
+}
+
+.ticket-qr-image {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    padding: 8px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.qr-unavailable {
+    color: #999;
+    font-size: 13px;
+    margin: 0;
+}

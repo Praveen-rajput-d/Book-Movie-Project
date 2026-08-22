@@ -1,0 +1,294 @@
+
+/* =====================================================
+   CINEBOOK - FOOTER
+===================================================== */
+
+.cine-footer {
+    margin-top: 60px;
+
+    background: #111111;
+
+    color: white;
+
+    padding: 50px 0 20px;
+
+    border-top: 1px solid #252525;
+}
+
+
+/* =====================================================
+   FOOTER MAIN
+===================================================== */
+
+.footer-main {
+    display: grid;
+
+    grid-template-columns:
+        1.5fr 1fr 1fr 1.2fr;
+
+    gap: 45px;
+}
+
+
+/* =====================================================
+   BRAND
+===================================================== */
+
+.footer-logo {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 28px;
+
+    font-weight: 850;
+
+    letter-spacing: -0.5px;
+}
+
+.footer-logo span {
+    color: #e50914;
+}
+
+.footer-logo:hover {
+    color: white;
+}
+
+.footer-brand p {
+    max-width: 260px;
+
+    margin: 0;
+
+    color: #888;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   FOOTER SECTIONS
+===================================================== */
+
+.footer-section {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.footer-section h5 {
+    margin: 0 0 8px;
+
+    color: darkred;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.footer-section a {
+    width: fit-content;
+
+    color: #888;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.footer-section a:hover {
+    color: #e50914;
+
+    transform: translateX(3px);
+}
+
+
+/* =====================================================
+   SOCIAL LINKS
+===================================================== */
+
+.social-links {
+    display: flex;
+
+    gap: 8px;
+
+    margin-bottom: 8px;
+}
+
+.social-links a {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #333;
+
+    border-radius: 8px;
+
+    background: #1b1b1b;
+
+    color: #aaa;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.social-links a:hover {
+    background: #e50914;
+
+    border-color: #e50914;
+
+    color: white;
+
+    transform: translateY(-3px);
+}
+
+.footer-social-text {
+    max-width: 220px;
+
+    margin: 2px 0 0;
+
+    color: #777;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   DIVIDER
+===================================================== */
+
+.footer-divider {
+    height: 1px;
+
+    margin: 40px 0 18px;
+
+    background: #292929;
+}
+
+
+/* =====================================================
+   FOOTER BOTTOM
+===================================================== */
+
+.footer-bottom {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+
+    color: #666;
+
+    font-size: 10px;
+}
+
+.footer-bottom p:last-child {
+    color: #777;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .cine-footer {
+        padding: 40px 0 18px;
+    }
+
+    .footer-main {
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 35px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 576px) {
+
+    .cine-footer {
+        margin-top: 40px;
+
+        padding: 35px 0 18px;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+    }
+
+    .footer-brand p {
+        max-width: 300px;
+    }
+
+    .footer-divider {
+        margin: 30px 0 18px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        align-items: center;
+
+        text-align: center;
+
+        gap: 7px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .footer-logo {
+        font-size: 25px;
+    }
+
+    .footer-section h5 {
+        font-size: 12px;
+    }
+
+}
+```

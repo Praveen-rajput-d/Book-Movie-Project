@@ -1,0 +1,60 @@
+# React
+node_modules/
+dist/
+build/
+
+# Spring Boot
+target/
+
+# Environment files
+.env
+.env.*
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dependencies
+node_modules/
+
+# Build files
+target/
+dist/
+build/
+
+# Environment / secrets
+.env
+.env.*
+application.properties
+application.yml
+
+# IDE
+.idea/
+.vscode/
+
+# Logs
+*.log
+# Backend
+cinebook-backend/cinebook-backend/target/
+
+# IntelliJ
+.idea/
+*.iml
+
+# Frontend
+cinebook-frontend/node_modules/
+cinebook-frontend/dist/
+
+# Environment / secrets
+.env
+.env.*
+application-local.properties
+application-secret.properties

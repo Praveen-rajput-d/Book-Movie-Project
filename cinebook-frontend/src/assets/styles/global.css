@@ -1,0 +1,77 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+   
+}
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #F4F5F7;
+    color: #222;
+    line-height: 1.6;
+    ;
+}
+
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+/* global button effect css
+*/
+button{
+    transition: all 0.25s ease;
+}
+button:hover{
+    transform: translate(-2px);
+}
+/* Movies details poster
+*/
+.details-poster{
+    transition: tranform 0.3s ease, box-shadow 0.3s ease;
+}
+.details-poster:hover{
+    transform: scale(1.03);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+/* Page Section
+*/
+
+.section-title{
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 25px;
+  position: relative;
+}
+.section-title::after{
+    content: "";
+    display: block;
+    width: 55px;
+    height: 4px;
+    background-color: #e50914;
+    border-radius: 10px;
+    margin-top: 8px;
+}
+/* Responsive
+*/
+
+@media(max-width: 760px){
+    .section-title{
+        font-size: 24px;
+    }
+}
+@media (max-width: 576px) {
+
+    .section-title {
+        font-size: 22px;
+    }
+
+}

@@ -1,0 +1,222 @@
+/* 
+   Navbar
+ */
+
+.cine-navbar {
+    background: #111111;
+    padding: 12px 0;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo of navbar */
+
+.cine-logo {
+    color: #ffffff !important;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.cine-logo:hover {
+    color: #e50914 !important;
+    transform: scale(1.03);
+}
+
+/* Navigation links  of navbar*/
+
+.cine-nav-link {
+    color: #d6d6d6 !important;
+    font-weight: 500;
+    padding: 8px 14px !important;
+    margin: 0 3px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect on navbar */
+
+.cine-nav-link:hover {
+    color: #ffffff !important;
+}
+
+/* Active link */
+
+.cine-nav-link.active {
+    color: #ffffff !important;
+}
+
+/* Active red underline */
+
+.cine-nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 2px;
+    height: 2px;
+    background: #e50923;
+    border-radius: 10px;
+}
+
+/* Profile dropdown  in my profile section*/
+
+.profile-dropdown {
+    color: #ffffff !important;
+    font-weight: 600;
+    padding: 8px 14px !important;
+}
+
+.profile-dropdown:hover {
+    color: #e50914 !important;
+}
+
+/* Dropdown*/
+
+.cine-dropdown {
+    border: none;
+    border-radius: 10px;
+    padding: 8px;
+    margin-top: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+    min-width: 190px;
+}
+
+.cine-dropdown .dropdown-item {
+    border-radius: 7px;
+    padding: 9px 12px;
+    transition: all 0.2s ease;
+}
+
+.cine-dropdown .dropdown-item:hover {
+    background: #f5f5f5;
+    padding-left: 16px;
+}
+
+.cine-dropdown .dropdown-item.active {
+    background: #f5f5f5;
+    color: #e50914;
+}
+
+/* Logout button css */
+
+.logout-item {
+    color: #dc3545 !important;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    width: 100%;
+    text-align: left;
+}
+
+.logout-item:hover {
+    background: #fff1f1 !important;
+    color: #c82333 !important;
+}
+
+/* Responsvive */
+
+@media (max-width: 991px) {
+
+    .cine-navbar {
+        padding: 10px 0;
+    }
+
+    .cine-nav-link {
+        padding: 10px 5px !important;
+    }
+
+    .cine-nav-link.active::after {
+        left: 5px;
+        right: auto;
+        width: 35px;
+    }
+
+    .cine-dropdown {
+        margin-top: 5px;
+    }
+}
+
+
+/*  css for Profile  */
+
+.profile-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.profile-icon {
+    font-size: 18px;
+}
+
+.profile-name {
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+
+@media (max-width: 991px) {
+
+    .navbar-nav {
+        padding-top: 12px;
+    }
+
+    .cine-nav-link {
+        width: fit-content;
+    }
+
+    .profile-dropdown {
+        padding-left: 5px !important;
+    }
+
+    .cine-dropdown {
+        box-shadow: none;
+        border: 1px solid #eeeeee;
+    }
+}
+
+
+/* Logo Animation styling */
+
+.cine-logo {
+    cursor: pointer;
+}
+
+.cine-logo:hover {
+    transform: scale(1.04);
+}
+
+
+/*  Navbar smoothness*/
+
+.cine-navbar {
+    backdrop-filter: blur(8px);
+}
+
+
+/*  DropDown Animation  */
+
+.cine-dropdown {
+    animation: dropdownFade 0.2s ease-in-out;
+}
+
+@keyframes dropdownFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

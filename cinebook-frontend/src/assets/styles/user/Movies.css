@@ -1,0 +1,687 @@
+```css
+/* =====================================================
+   CINEBOOK - MOVIES PAGE
+===================================================== */
+
+.movies-page {
+    min-height: calc(100vh - 70px);
+
+    background: #f6f7f9;
+
+    padding-bottom: 60px;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.movies-header {
+    position: relative;
+
+    padding: 50px 0 75px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111111,
+            #1d1d1d
+        );
+
+    overflow: hidden;
+}
+
+
+/* Decorative red glow */
+
+.movies-header::after {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    right: -100px;
+    top: -150px;
+
+    border-radius: 50%;
+
+    background: rgba(229, 9, 20, 0.15);
+
+    filter: blur(50px);
+}
+
+.movies-header-content {
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+}
+
+.movies-badge {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    padding: 5px 10px;
+
+    border: 1px solid rgba(229, 9, 20, 0.5);
+
+    border-radius: 20px;
+
+    color: #ff5b62;
+
+    font-size: 9px;
+
+    font-weight: 750;
+
+    letter-spacing: 1px;
+}
+
+.movies-header h1 {
+    margin: 0;
+
+    color: white;
+
+    font-size: 42px;
+
+    font-weight: 850;
+
+    letter-spacing: -1px;
+}
+
+.movies-header p {
+    max-width: 500px;
+
+    margin: 10px auto 0;
+
+    color: #999;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
+
+.movies-container {
+    position: relative;
+
+    margin-top: -35px;
+
+    z-index: 5;
+}
+
+
+/* =====================================================
+   SEARCH CARD
+===================================================== */
+
+.movie-search-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 12px;
+
+    background: white;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+.movie-search {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    flex: 1;
+
+    height: 44px;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 8px;
+
+    background: #fafafa;
+
+    overflow: hidden;
+}
+
+.search-icon {
+    padding-left: 13px;
+
+    font-size: 14px;
+
+    color: #999;
+}
+
+.movie-search input {
+    flex: 1;
+
+    height: 100%;
+
+    padding: 0 10px;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #333;
+
+    font-size: 12px;
+}
+
+.movie-search input::placeholder {
+    color: #aaa;
+}
+
+
+/* Search clear */
+
+.search-clear {
+    border: none;
+
+    background: transparent;
+
+    color: #aaa;
+
+    cursor: pointer;
+
+    font-size: 11px;
+}
+
+.search-clear:hover {
+    color: #e50914;
+}
+
+
+/* Search button */
+
+.search-btn {
+    height: 32px;
+
+    margin-right: 5px;
+
+    padding: 0 17px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #e50914;
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+.search-btn:hover {
+    background: #c70812;
+}
+
+
+/* Clear button */
+
+.clear-filter-btn {
+    height: 44px;
+
+    padding: 0 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    background: white;
+
+    color: #666;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.clear-filter-btn:hover {
+    border-color: #e50914;
+
+    color: #e50914;
+}
+
+
+/* =====================================================
+   FILTER CARD
+===================================================== */
+
+.movie-filter-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    margin-top: 15px;
+
+    padding: 18px 20px;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 12px;
+
+    background: white;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+.filter-group {
+    flex: 1;
+}
+
+.filter-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-bottom: 10px;
+
+    color: #333;
+
+    font-size: 11px;
+
+    font-weight: 750;
+}
+
+.filter-title span {
+    font-size: 12px;
+}
+
+.filter-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+}
+
+.filter-btn {
+    padding: 6px 13px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 20px;
+
+    background: white;
+
+    color: #777;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+    border-color: #e50914;
+
+    color: #e50914;
+}
+
+
+/* Genre active */
+
+.genre-active {
+    border-color: #e50914;
+
+    background: #e50914;
+
+    color: white;
+}
+
+.genre-active:hover {
+    background: #c70812;
+
+    color: white;
+}
+
+
+/* Language active */
+
+.language-active {
+    border-color: #1769e0;
+
+    background: #1769e0;
+
+    color: white;
+}
+
+.language-active:hover {
+    background: #1257bd;
+
+    color: white;
+}
+
+
+/* Divider */
+
+.filter-divider {
+    width: 1px;
+
+    align-self: stretch;
+
+    background: #eeeeee;
+}
+
+
+/* =====================================================
+   SECTION HEADER
+===================================================== */
+
+.movie-section-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin: 35px 0 20px;
+}
+
+.movie-section-header h2 {
+    margin: 0;
+
+    color: #222;
+
+    font-size: 22px;
+
+    font-weight: 800;
+}
+
+.movie-section-header p {
+    margin: 4px 0 0;
+
+    color: #999;
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   MOVIE GRID
+===================================================== */
+
+.movie-grid {
+    row-gap: 25px;
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.movies-loading {
+    min-height: 300px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.movies-spinner {
+    width: 38px;
+    height: 38px;
+
+    border: 3px solid #ddd;
+
+    border-top-color: #e50914;
+
+    border-radius: 50%;
+
+    animation:
+        moviesSpin 0.8s linear infinite;
+}
+
+.movies-loading p {
+    margin-top: 12px;
+
+    color: #999;
+
+    font-size: 11px;
+}
+
+@keyframes moviesSpin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.movies-empty {
+    max-width: 500px;
+
+    margin: 50px auto;
+
+    padding: 50px 25px;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 15px;
+
+    background: white;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.04);
+}
+
+.empty-icon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    background: #fff1f1;
+
+    font-size: 28px;
+}
+
+.movies-empty h3 {
+    margin: 18px 0 7px;
+
+    color: #333;
+
+    font-size: 18px;
+
+    font-weight: 750;
+}
+
+.movies-empty p {
+    margin: 0 auto 20px;
+
+    color: #999;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+.movies-empty button {
+    padding: 9px 17px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #e50914;
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: 650;
+
+    cursor: pointer;
+}
+
+.movies-empty button:hover {
+    background: #c70812;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .movies-header {
+        padding: 40px 0 65px;
+    }
+
+    .movies-header h1 {
+        font-size: 35px;
+    }
+
+    .movie-filter-card {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 18px;
+    }
+
+    .filter-group {
+        width: 100%;
+    }
+
+    .filter-divider {
+        width: 100%;
+
+        height: 1px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 576px) {
+
+    .movies-header {
+        padding: 35px 0 60px;
+    }
+
+    .movies-header h1 {
+        font-size: 30px;
+    }
+
+    .movies-header p {
+        padding: 0 20px;
+
+        font-size: 11px;
+    }
+
+    .movies-container {
+        margin-top: -30px;
+    }
+
+    .movie-search-card {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding: 12px;
+    }
+
+    .movie-search {
+        width: 100%;
+    }
+
+    .clear-filter-btn {
+        width: 100%;
+    }
+
+    .movie-filter-card {
+        padding: 15px;
+    }
+
+    .movie-section-header {
+        margin-top: 28px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .movies-header h1 {
+        font-size: 27px;
+    }
+
+    .search-btn {
+        padding: 0 12px;
+    }
+
+    .filter-btn {
+        padding: 6px 10px;
+    }
+
+}
+```

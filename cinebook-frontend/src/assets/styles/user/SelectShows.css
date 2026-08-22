@@ -1,0 +1,582 @@
+```css
+/* =====================================================
+   CINEBOOK - SELECT SHOW
+===================================================== */
+
+.select-show-page {
+    min-height: calc(100vh - 70px);
+
+    background: #f6f7f9;
+
+    padding: 45px 0 70px;
+}
+
+
+/* =====================================================
+   PAGE HEADER
+===================================================== */
+
+.select-show-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    text-align: left;
+
+    margin-bottom: 15px;
+}
+
+.show-title-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #e50914;
+
+    border-radius: 12px;
+
+    font-size: 24px;
+
+    box-shadow:
+        0 6px 18px rgba(229, 9, 20, 0.2);
+}
+
+.select-show-header h2 {
+    margin: 0;
+
+    color: #222;
+
+    font-size: 30px;
+
+    font-weight: 750;
+}
+
+.select-show-header p {
+    margin: 5px 0 0;
+
+    color: #888;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   SHOW COUNT
+===================================================== */
+
+.show-count {
+    width: fit-content;
+
+    margin: 0 auto 25px;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    background: white;
+
+    border: 1px solid #eeeeee;
+
+    color: #888;
+
+    font-size: 11px;
+}
+
+.show-count span {
+    color: #e50914;
+
+    font-weight: 750;
+
+    margin-right: 4px;
+}
+
+
+/* =====================================================
+   SHOW GRID
+===================================================== */
+
+.shows-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
+
+    max-width: 950px;
+
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+   SHOW CARD
+===================================================== */
+
+.show-card {
+    background: white;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    border: 1px solid #eeeeee;
+
+    box-shadow:
+        0 7px 25px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.show-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 14px 35px rgba(0, 0, 0, 0.11);
+}
+
+
+/* =====================================================
+   CARD HEADER
+===================================================== */
+
+.show-card-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 18px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #111111,
+        #252525
+    );
+
+    color: white;
+}
+
+
+/* Date */
+
+.show-date {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.show-date span,
+.show-price span {
+    color: #999;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.show-date strong {
+    font-size: 14px;
+
+    font-weight: 650;
+}
+
+
+/* Price */
+
+.show-price {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 3px;
+}
+
+.show-price strong {
+    color: #ff4b55;
+
+    font-size: 17px;
+
+    font-weight: 750;
+}
+
+
+/* =====================================================
+   CARD BODY
+===================================================== */
+
+.show-card-body {
+    padding: 22px;
+}
+
+
+/* =====================================================
+   THEATRE
+===================================================== */
+
+.show-location {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.location-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: #fff1f1;
+
+    border-radius: 10px;
+
+    font-size: 18px;
+}
+
+.show-location span {
+    display: block;
+
+    color: #999;
+
+    font-size: 10px;
+
+    margin-bottom: 3px;
+}
+
+.show-location h5 {
+    margin: 0;
+
+    color: #333;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   SHOW INFORMATION
+===================================================== */
+
+.show-info-row {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 15px;
+
+    padding: 20px 0;
+}
+
+.show-info-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+}
+
+.info-icon {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: #f6f6f6;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+}
+
+.show-info-item div {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+.show-info-item small {
+    color: #999;
+
+    font-size: 9px;
+}
+
+.show-info-item strong {
+    color: #444;
+
+    font-size: 12px;
+
+    font-weight: 650;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   SELECT SEATS BUTTON
+===================================================== */
+
+.select-seat-btn {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    width: 100%;
+
+    padding: 12px 15px;
+
+    background: #e50914;
+
+    color: white;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 650;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.select-seat-btn span {
+    font-size: 18px;
+
+    line-height: 1;
+
+    transition: transform 0.2s ease;
+}
+
+.select-seat-btn:hover {
+    background: #c70812;
+
+    color: white;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(229, 9, 20, 0.2);
+}
+
+.select-seat-btn:hover span {
+    transform: translateX(4px);
+}
+
+
+/* =====================================================
+   NO SHOWS
+===================================================== */
+
+.no-shows-card {
+    max-width: 500px;
+
+    margin: 60px auto;
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    background: white;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.no-show-icon {
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 18px;
+
+    background: #fff1f1;
+
+    border-radius: 50%;
+
+    font-size: 30px;
+}
+
+.no-shows-card h4 {
+    margin-bottom: 8px;
+
+    color: #333;
+
+    font-size: 19px;
+
+    font-weight: 700;
+}
+
+.no-shows-card p {
+    margin-bottom: 22px;
+
+    color: #999;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+.browse-movies-btn {
+    display: inline-block;
+
+    padding: 10px 18px;
+
+    border-radius: 8px;
+
+    background: #e50914;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 650;
+
+    transition: all 0.2s ease;
+}
+
+.browse-movies-btn:hover {
+    background: #c70812;
+
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .select-show-page {
+        padding: 30px 0 50px;
+    }
+
+    .shows-grid {
+        grid-template-columns: 1fr;
+
+        max-width: 600px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 576px) {
+
+    .select-show-page {
+        padding: 25px 0 45px;
+    }
+
+    .select-show-header {
+        gap: 10px;
+    }
+
+    .show-title-icon {
+        width: 44px;
+        height: 44px;
+
+        font-size: 20px;
+    }
+
+    .select-show-header h2 {
+        font-size: 23px;
+    }
+
+    .select-show-header p {
+        font-size: 11px;
+    }
+
+    .show-card-body {
+        padding: 18px;
+    }
+
+    .show-info-row {
+        gap: 10px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .show-info-row {
+        grid-template-columns: 1fr;
+    }
+
+    .show-card-header {
+        padding: 15px;
+    }
+
+    .show-card-body {
+        padding: 15px;
+    }
+
+}
+```

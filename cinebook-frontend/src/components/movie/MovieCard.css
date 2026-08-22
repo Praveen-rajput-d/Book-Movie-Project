@@ -1,0 +1,784 @@
+/* /* .movie-card {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #fff;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+.movie-card .card-img-top {
+    transition: transform 0.3s ease;
+}
+
+.movie-card:hover .card-img-top {
+    transform: scale(1.03);
+}
+
+.movie-card .card-title {
+    font-size: 18px;
+    line-height: 1.3;
+} */
+
+
+```css
+/* =====================================================
+   CINEBOOK MOVIE CARD
+===================================================== */
+
+.cine-movie-card {
+
+    height: 100%;
+
+    overflow: hidden;
+
+    border: 1px solid #e9e9e9;
+
+    border-radius: 12px;
+
+    background: white;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+/* =====================================================
+   CARD HOVER
+===================================================== */
+
+.cine-movie-card:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.13);
+
+}
+
+
+/* =====================================================
+   POSTER
+===================================================== */
+
+.cine-poster-wrapper {
+
+    position: relative;
+
+    height: 330px;
+
+    overflow: hidden;
+
+    background: #111;
+
+}
+
+
+.cine-movie-poster {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.5s ease;
+
+}
+
+
+/* Zoom poster */
+
+.cine-movie-card:hover
+.cine-movie-poster {
+
+    transform: scale(1.06);
+
+}
+
+
+/* =====================================================
+   POSTER OVERLAY
+===================================================== */
+
+.cine-poster-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 50%,
+            rgba(0, 0, 0, 0.8)
+        );
+
+    pointer-events: none;
+
+}
+
+
+/* =====================================================
+   RATING
+===================================================== */
+
+.cine-rating {
+
+    position: absolute;
+
+    left: 12px;
+
+    bottom: 12px;
+
+    padding: 5px 9px;
+
+    border-radius: 5px;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    color: #ffd54a;
+
+    font-size: 10px;
+
+    font-weight: 750;
+
+    backdrop-filter: blur(5px);
+
+}
+
+
+/* =====================================================
+   GENRE
+===================================================== */
+
+.cine-genre {
+
+    position: absolute;
+
+    top: 12px;
+
+    left: 12px;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    background: #e50914;
+
+    color: white;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+
+/* =====================================================
+   QUICK VIEW
+===================================================== */
+
+.cine-quick-view {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+        translate(-50%, -30%);
+
+    opacity: 0;
+
+    padding: 9px 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+
+    border-radius: 6px;
+
+    background: rgba(0, 0, 0, 0.7);
+
+    color: white;
+
+    font-size: 10px;
+
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+/* Show on hover */
+
+.cine-movie-card:hover
+.cine-quick-view {
+
+    opacity: 1;
+
+    transform:
+        translate(-50%, -50%);
+
+}
+
+
+.cine-quick-view:hover {
+
+    background: white;
+
+    color: #111;
+
+}
+
+
+/* =====================================================
+   CARD BODY
+===================================================== */
+
+.cine-movie-body {
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 16px;
+
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.cine-movie-title {
+
+    margin: 0 0 10px;
+
+    color: #222;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+}
+
+
+/* =====================================================
+   MOVIE INFO
+===================================================== */
+
+.cine-movie-info {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.cine-movie-info span {
+
+    color: #777;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+}
+
+
+/* =====================================================
+   RELEASE DATE
+===================================================== */
+
+.cine-release-date {
+
+    margin-bottom: 15px;
+
+    color: #999;
+
+    font-size: 9px;
+
+}
+
+
+/* =====================================================
+   BOOK BUTTON
+===================================================== */
+
+.cine-book-button {
+
+    width: 100%;
+
+    padding: 10px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #e50914;
+
+    color: white;
+
+    font-size: 10px;
+
+    font-weight: 750;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.cine-book-button:hover {
+
+    background: #c70812;
+
+    transform: translateY(-1px);
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .cine-poster-wrapper {
+
+        height: 350px;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 576px) {
+
+    .cine-poster-wrapper {
+
+        height: 380px;
+
+    }
+
+    .cine-movie-body {
+
+        padding: 15px;
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .cine-poster-wrapper {
+
+        height: 350px;
+
+    }
+
+}
+ */
+
+
+
+
+ 
+/* =================================================
+   CINEBOOK MOVIE CARD
+================================================= */
+
+.cine-movie-card {
+
+    height: 100%;
+
+    background: #ffffff;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.cine-movie-card:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.20);
+
+}
+
+
+/* =================================================
+   POSTER
+================================================= */
+
+.cine-poster-wrapper {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 360px;
+
+    overflow: hidden;
+
+    background: #111111;
+
+}
+
+
+/* IMPORTANT:
+   Keeps every movie poster the same size
+*/
+
+.cine-movie-poster {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    display: block;
+
+    transition: transform 0.5s ease;
+
+}
+
+
+/* Zoom poster on hover */
+
+.cine-movie-card:hover .cine-movie-poster {
+
+    transform: scale(1.05);
+
+}
+
+
+/* =================================================
+   DARK OVERLAY
+================================================= */
+
+.cine-poster-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 50%,
+            rgba(0, 0, 0, 0.85)
+        );
+
+    pointer-events: none;
+
+}
+
+
+/* =================================================
+   RATING
+================================================= */
+
+.cine-rating {
+
+    position: absolute;
+
+    bottom: 14px;
+
+    left: 14px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    z-index: 2;
+
+}
+
+
+/* =================================================
+   GENRE
+================================================= */
+
+.cine-genre {
+
+    position: absolute;
+
+    top: 14px;
+
+    left: 14px;
+
+    background: #e50914;
+
+    color: #ffffff;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+
+    z-index: 2;
+
+}
+
+
+/* =================================================
+   VIEW DETAILS BUTTON
+================================================= */
+
+.cine-quick-view {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background: rgba(229, 9, 20, 0.95);
+
+    color: #ffffff;
+
+    border: none;
+
+    border-radius: 25px;
+
+    padding: 9px 20px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    opacity: 0;
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+
+    z-index: 5;
+
+}
+
+
+.cine-movie-card:hover .cine-quick-view {
+
+    opacity: 1;
+
+}
+
+
+/* =================================================
+   MOVIE BODY
+================================================= */
+
+.cine-movie-body {
+
+    padding: 18px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 180px;
+
+}
+
+
+/* =================================================
+   TITLE
+================================================= */
+
+.cine-movie-title {
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    color: #171717;
+
+    margin-bottom: 12px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+}
+
+
+/* =================================================
+   MOVIE INFO
+================================================= */
+
+.cine-movie-info {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    color: #666666;
+
+    font-size: 13px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.cine-movie-info span {
+
+    white-space: nowrap;
+
+}
+
+
+/* =================================================
+   RELEASE DATE
+================================================= */
+
+.cine-release-date {
+
+    color: #888888;
+
+    font-size: 13px;
+
+    margin-bottom: 16px;
+
+}
+
+
+/* =================================================
+   BOOK BUTTON
+================================================= */
+
+.cine-book-button {
+
+    width: 100%;
+
+    margin-top: auto;
+
+    padding: 10px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #e50914;
+
+    color: #ffffff;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.2s ease;
+
+}
+
+
+.cine-book-button:hover {
+
+    background: #b20710;
+
+    transform: translateY(-1px);
+
+}
+
+
+/* =================================================
+   RESPONSIVE
+================================================= */
+
+@media (max-width: 768px) {
+
+    .cine-poster-wrapper {
+
+        height: 330px;
+
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .cine-poster-wrapper {
+
+        height: 400px;
+
+    }
+
+}
+
