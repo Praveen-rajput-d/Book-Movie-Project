@@ -1,8 +1,4 @@
 
-/* =====================================================
-   CINEBOOK PROFILE PAGE
-===================================================== */
-
 .profile-page {
     min-height: calc(100vh - 70px);
     background: #f6f7f9;
@@ -10,9 +6,7 @@
 }
 
 
-/* =====================================================
-   LOADING
-===================================================== */
+
 
 .profile-loading {
     min-height: 70vh;
@@ -29,9 +23,7 @@
 }
 
 
-/* =====================================================
-   PROFILE HEADER
-===================================================== */
+
 
 .profile-header {
     display: flex;
@@ -56,7 +48,7 @@
 }
 
 
-/* Avatar */
+
 
 .profile-avatar {
     width: 85px;
@@ -81,7 +73,6 @@
 }
 
 
-/* Header text */
 
 .profile-header-info h2 {
     margin: 0;
@@ -99,7 +90,7 @@
 }
 
 
-/* Role */
+
 
 .role-badge {
     display: inline-block;
@@ -122,9 +113,7 @@
 }
 
 
-/* =====================================================
-   PROFILE CARD
-===================================================== */
+
 
 .profile-card {
     background: #ffffff;
@@ -138,10 +127,6 @@
     border: 1px solid #eeeeee;
 }
 
-
-/* =====================================================
-   CARD TITLE
-===================================================== */
 
 .profile-card-title {
     display: flex;
@@ -175,9 +160,6 @@
 }
 
 
-/* =====================================================
-   PROFILE DETAILS
-===================================================== */
 
 .profile-details {
     display: grid;
@@ -188,7 +170,7 @@
 }
 
 
-/* Field */
+
 
 .profile-field {
     display: flex;
@@ -208,7 +190,7 @@
 }
 
 
-/* Value */
+
 
 .profile-value {
     min-height: 45px;
@@ -231,7 +213,6 @@
 }
 
 
-/* Email / readonly */
 
 .disabled-value {
     color: #777;
@@ -240,9 +221,7 @@
 }
 
 
-/* =====================================================
-   INPUTS
-===================================================== */
+
 
 .profile-input {
     width: 100%;
@@ -273,9 +252,7 @@
 }
 
 
-/* =====================================================
-   ACTION BUTTONS
-===================================================== */
+
 
 .profile-actions {
     display: flex;
@@ -292,7 +269,7 @@
 }
 
 
-/* Common button */
+
 
 .profile-btn {
     border: none;
@@ -310,9 +287,6 @@
     transition: all 0.25s ease;
 }
 
-
-/* Edit */
-
 .edit-btn {
     background: #111111;
 
@@ -326,7 +300,7 @@
 }
 
 
-/* Save */
+
 
 .save-btn {
     background: #198754;
@@ -341,7 +315,7 @@
 }
 
 
-/* Cancel */
+
 
 .cancel-btn {
     background: #eeeeee;
@@ -354,7 +328,7 @@
 }
 
 
-/* Password */
+
 
 .password-btn {
     background: #fff3cd;
@@ -369,9 +343,7 @@
 }
 
 
-/* =====================================================
-   PASSWORD SECTION
-===================================================== */
+
 
 .password-section {
     margin-top: 30px;
@@ -402,7 +374,7 @@
 }
 
 
-/* Password heading */
+
 
 .password-header {
     display: flex;
@@ -456,7 +428,7 @@
 }
 
 
-/* Password fields */
+
 
 .password-form {
     display: grid;
@@ -476,7 +448,7 @@
 }
 
 
-/* Password button */
+
 
 .password-actions {
     margin-top: 25px;
@@ -497,9 +469,7 @@
 }
 
 
-/* =====================================================
-   MOBILE RESPONSIVE
-===================================================== */
+
 
 @media (max-width: 768px) {
 
@@ -565,9 +535,7 @@
 }
 
 
-/* =====================================================
-   SMALL MOBILE
-===================================================== */
+
 
 @media (max-width: 480px) {
 

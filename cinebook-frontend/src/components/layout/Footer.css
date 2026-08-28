@@ -1,7 +1,5 @@
 
-/* 
-   CINEBOOK - FOOTER part  css
- */
+
 
 .cine-footer {
     margin-top: 60px;
@@ -16,9 +14,7 @@
 }
 
 
-/* 
-   FOOTER MAIN
- */
+
 
 .footer-main {
     display: grid;
@@ -30,9 +26,7 @@
 }
 
 
-/* 
-   BRAND
- */
+
 
 .footer-logo {
     display: inline-block;
@@ -71,9 +65,7 @@
 }
 
 
-/* 
-   FOOTER SECTIONS
- */
+
 
 .footer-section {
     display: flex;
@@ -114,9 +106,7 @@
 }
 
 
-/* 
-   SOCIAL LINKS
- */
+
 
 .social-links {
     display: flex;
@@ -177,9 +167,7 @@
 }
 
 
-/* 
-   DIVIDER
-*/
+
 
 .footer-divider {
     height: 1px;

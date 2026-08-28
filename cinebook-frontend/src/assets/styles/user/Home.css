@@ -1,15 +1,11 @@
-/*
-   HOME PAGE
- */
+
 
 .home-page {
     min-height: 100vh;
     background-color: #f5f5f5;
 }
 
-/* 
-   NOW SHOWING SECTION 
- */
+
 
 .now-showing-section {
     padding-top: 45px;
@@ -34,17 +30,13 @@
     margin-top: 8px;
 }
 
-/*
-   MOVIE COLUMN that show movie
- */
+
 
 .movie-column {
     margin-bottom: 25px;
 }
 
-/* 
-   RESPONSIVE
-*/
+
 
 @media (max-width: 768px) {
 

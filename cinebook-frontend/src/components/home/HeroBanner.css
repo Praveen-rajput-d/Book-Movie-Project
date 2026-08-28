@@ -1,9 +1,6 @@
 
 
 
-/*
-  Hero Bannner
-*/
 
 .hero-banner {
     position: relative;
@@ -16,9 +13,6 @@
     background: #111;
 }
 
-/* 
-   Movie Image
- */
 
 .hero-image {
     position: absolute;
@@ -34,9 +28,6 @@
     z-index: 0;
 }
 
-/* 
-   OVERLAY
-*/
 
 .hero-overlay {
     position: absolute;
@@ -59,9 +50,7 @@
 }
 
 
-/*
-   CONTENT
-*/
+
 
 .hero-content {
     position: relative;
@@ -178,9 +167,7 @@
 }
 
 
-/* 
-   Buttons
-*/
+
 
 .hero-buttons {
     display: flex;
@@ -233,9 +220,7 @@
 }
 
 
-/* 
-   BOTTOM FADE
-*/
+
 
 .hero-bottom-fade {
     position: absolute;
@@ -256,9 +241,7 @@
 }
 
 
-/* 
-   TABLET
-   */
+
 
 @media (max-width: 768px) {
 
@@ -278,9 +261,7 @@
 }
 
 
-/* 
-   MOBILE
-*/
+
 
 @media (max-width: 576px) {
 

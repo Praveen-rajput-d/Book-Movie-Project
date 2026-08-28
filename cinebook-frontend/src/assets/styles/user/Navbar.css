@@ -1,6 +1,4 @@
-/* 
-   Navbar
- */
+
 
 .cine-navbar {
     background: #111111;
@@ -11,7 +9,6 @@
     z-index: 1000;
 }
 
-/* Logo of navbar */
 
 .cine-logo {
     color: #ffffff !important;
@@ -26,7 +23,6 @@
     transform: scale(1.03);
 }
 
-/* Navigation links  of navbar*/
 
 .cine-nav-link {
     color: #d6d6d6 !important;
@@ -37,19 +33,19 @@
     transition: color 0.3s ease;
 }
 
-/* Hover effect on navbar */
+
 
 .cine-nav-link:hover {
     color: #ffffff !important;
 }
 
-/* Active link */
+
 
 .cine-nav-link.active {
     color: #ffffff !important;
 }
 
-/* Active red underline */
+
 
 .cine-nav-link.active::after {
     content: "";
@@ -62,7 +58,7 @@
     border-radius: 10px;
 }
 
-/* Profile dropdown  in my profile section*/
+
 
 .profile-dropdown {
     color: #ffffff !important;
@@ -74,7 +70,7 @@
     color: #e50914 !important;
 }
 
-/* Dropdown*/
+
 
 .cine-dropdown {
     border: none;
@@ -101,7 +97,7 @@
     color: #e50914;
 }
 
-/* Logout button css */
+
 
 .logout-item {
     color: #dc3545 !important;
@@ -117,7 +113,6 @@
     color: #c82333 !important;
 }
 
-/* Responsvive */
 
 @media (max-width: 991px) {
 
@@ -184,7 +179,6 @@
 }
 
 
-/* Logo Animation styling */
 
 .cine-logo {
     cursor: pointer;
@@ -195,14 +189,13 @@
 }
 
 
-/*  Navbar smoothness*/
+
 
 .cine-navbar {
     backdrop-filter: blur(8px);
 }
 
 
-/*  DropDown Animation  */
 
 .cine-dropdown {
     animation: dropdownFade 0.2s ease-in-out;

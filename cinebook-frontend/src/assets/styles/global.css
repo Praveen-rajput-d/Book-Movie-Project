@@ -25,16 +25,14 @@ ul{
     list-style:none;
 }
 
-/* global button effect css
-*/
+
 button{
     transition: all 0.25s ease;
 }
 button:hover{
     transform: translate(-2px);
 }
-/* Movies details poster
-*/
+
 .details-poster{
     transition: tranform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -42,8 +40,7 @@ button:hover{
     transform: scale(1.03);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 }
-/* Page Section
-*/
+
 
 .section-title{
     font-weight: 700;
@@ -60,8 +57,7 @@ button:hover{
     border-radius: 10px;
     margin-top: 8px;
 }
-/* Responsive
-*/
+
 
 @media(max-width: 760px){
     .section-title{
