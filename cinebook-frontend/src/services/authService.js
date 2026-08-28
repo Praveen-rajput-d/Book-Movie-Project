@@ -1,11 +1,9 @@
-import axios from "axios";
-
-const BASE_URL = "https://book-movie-project.onrender.com";
+import axiosInstance from "./axiosInstance";
 
 export const registerUser = (user) => {
-    return axios.post(`${BASE_URL}/register`, user);
+    return axiosInstance.post("/api/auth/register", user);
 };
 
 export const loginUser = (loginData) => {
-    return axios.post(`${BASE_URL}/login`, loginData);
+    return axiosInstance.post("/api/auth/login", loginData);
 };
