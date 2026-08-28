@@ -1,4 +1,4 @@
-import axiosInstance from "./axiosinstance";
+import axiosInstance from "./axiosInstance";
 
 export const processPayment=(paymentdata)=>{
     return axiosInstance.post("/api/payment",paymentdata);

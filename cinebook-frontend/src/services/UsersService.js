@@ -1,4 +1,4 @@
-import axiosInstance from "./axiosinstance";
+import axiosInstance from "./axiosInstance";
 
 export const getMyProfile=()=>{
 return axiosInstance.get("/api/users/me");

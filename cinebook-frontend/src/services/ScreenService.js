@@ -1,4 +1,4 @@
-import axiosInstance from "./axiosinstance";
+import axiosInstance from "./axiosInstance";
 
 export const addScreen=(screen)=>{
     return axiosInstance.post("/api/screen",screen);

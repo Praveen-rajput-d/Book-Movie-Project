@@ -1,5 +1,5 @@
 import axios from "axios";
-import axiosInstance from "./axiosinstance";
+import axiosInstance from "./axiosInstance";
 
 export const getMyTickets=()=>{
     return axiosInstance.get("/api/tickets/my-tickets");

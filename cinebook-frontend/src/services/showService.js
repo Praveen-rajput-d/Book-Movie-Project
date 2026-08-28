@@ -1,4 +1,4 @@
-import axiosInstance from "./axiosinstance";
+import axiosInstance from "./axiosInstance";
 
 export const getShowById=(showId)=>{
     return axiosInstance.get(`/api/show/${showId}`);

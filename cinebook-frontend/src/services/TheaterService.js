@@ -1,4 +1,4 @@
-import axiosInstance from "./axiosinstance";
+import axiosInstance from "./axiosInstance";
 
 export const allTheatres=()=>{
     return axiosInstance.get("/api/theater/all");

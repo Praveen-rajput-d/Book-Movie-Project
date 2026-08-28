@@ -1,6 +1,6 @@
 
 
-import axiosInstance from "./axiosinstance";
+import axiosInstance from "./axiosInstance";
 
 
 
