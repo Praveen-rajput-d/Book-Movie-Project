@@ -1,6 +1,7 @@
 package com.cinebook.cinebook.security;
 import org.springframework.security.config.Customizer;
 import java.util.List;
+import org.springframework.http.HttpMethod;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -82,7 +83,7 @@ public CorsConfigurationSource corsConfigurationSource() {
                 .sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth->auth
                         .requestMatchers("/api/auth/**").permitAll()//publi api
-                       .requestMatchers("/api/movies/**").permitAll()
+                       .requestMatchers(HttpMethod.GET,"/api/movies/**").permitAll()
 
 
                         //test api
