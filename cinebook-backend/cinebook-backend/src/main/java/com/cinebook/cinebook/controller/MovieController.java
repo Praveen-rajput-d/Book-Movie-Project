@@ -30,7 +30,7 @@ public class MovieController {
     }
 
    @PreAuthorize("hasAnyRole('USER','ADMIN')")
-@GetMapping("/all")
+@GetMapping
     public  ResponseEntity<Page<MovieResponseDto>>getAllMovies(@RequestParam(defaultValue = "0")int page,
                                                              @RequestParam(defaultValue = "5")int size,
                                                              @RequestParam(defaultValue = "id")String sortBy,
@@ -52,7 +52,7 @@ public class MovieController {
 
 //soft delete
     @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("/deactMovie/{id}")
+    @PutMapping("/deactMovie/{id}")
     public ResponseEntity<String>deleteMovie(@PathVariable Long id){
         movieService.deleteMovie(id);
         return ResponseEntity.ok("Movie Deleted Successfully");
