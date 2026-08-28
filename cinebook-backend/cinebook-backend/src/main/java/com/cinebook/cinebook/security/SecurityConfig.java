@@ -82,7 +82,7 @@ public CorsConfigurationSource corsConfigurationSource() {
                 .sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth->auth
                         .requestMatchers("/api/auth/**").permitAll()//publi api
-
+                       .requestMatchers("/api/movies/**").permitAll()
 
 
                         //test api
