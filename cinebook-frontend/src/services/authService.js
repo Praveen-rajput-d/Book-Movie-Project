@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8080/api/auth";
+const BASE_URL = "https://book-movie-project.onrender.com";
 
 export const registerUser = (user) => {
     return axios.post(`${BASE_URL}/register`, user);

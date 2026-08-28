@@ -315,7 +315,7 @@ const filterbyMovieType=async(value)=>{
                                             <td>
 
                                                 <img
-                                                    src={`http://localhost:8080/posters/${movie.posterUrl}`}
+                                                    src={`${import.meta.env.VITE_API_URL}/posters/${movie.posterUrl}`}
                                                     alt={movie.title}
                                                     width="70"
                                                     height="90"

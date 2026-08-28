@@ -74,7 +74,7 @@ const MovieDetails = () => {
                 className="movie-details-background"
                 style={{
                     backgroundImage:
-                        `url(http://localhost:8080/posters/${movie.posterUrl})`
+                        `${import.meta.env.VITE_API_URL}/posters/${movie.posterUrl})`
                 }}
             ></div>
 
@@ -109,7 +109,7 @@ const MovieDetails = () => {
                     <div className="movie-poster-section">
 
                         <img
-                            src={`http://localhost:8080/posters/${movie.posterUrl}`}
+                            src={`${import.meta.env.VITE_API_URL}/posters/${movie.posterUrl}`}
                             alt={movie.title}
                             className="movie-details-poster"
                         />

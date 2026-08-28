@@ -17,7 +17,7 @@ const MovieCard = ({ movie }) => {
             <div className="cine-poster-wrapper">
 
                 <img
-                    src={`http://localhost:8080/api/movies/poster/${movie.posterUrl}`}
+                    src={`${import.meta.env.VITE_API_URL}/api/movies/poster/${movie.posterUrl}`}
                     alt={movie.title}
                     className="cine-movie-poster"
                 />
