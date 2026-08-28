@@ -13,9 +13,6 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.data.domain.Page;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
 import java.util.List;
 
 @RestController
@@ -32,8 +29,8 @@ public class MovieController {
         return new ResponseEntity<>(movieResponseDto, HttpStatus.CREATED);
     }
 
-    @PreAuthorize("hasAnyRole('USER','ADMIN')")
-    @GetMapping
+   @PreAuthorize("hasAnyRole('USER','ADMIN')")
+@GetMapping("/all")
     public  ResponseEntity<Page<MovieResponseDto>>getAllMovies(@RequestParam(defaultValue = "0")int page,
                                                              @RequestParam(defaultValue = "5")int size,
                                                              @RequestParam(defaultValue = "id")String sortBy,
@@ -71,7 +68,7 @@ public class MovieController {
 
     @PreAuthorize("hasAnyRole('USER','ADMIN')")
     @GetMapping("/search/{title}")
-    public ResponseEntity<List<MovieResponseDto>>searchMovie(@RequestParam String title){
+    public ResponseEntity<List<MovieResponseDto>>searchMovie(@PathVariable String title){
         return ResponseEntity.ok(movieService.searchMovie(title));
     }
     @PreAuthorize("hasAnyRole('USER','ADMIN')")
