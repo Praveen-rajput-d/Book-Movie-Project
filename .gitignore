@@ -33,8 +33,7 @@ build/
 # Environment / secrets
 .env
 .env.*
-application.properties
-application.yml
+
 
 # IDE
 .idea/
@@ -56,5 +55,3 @@ cinebook-frontend/dist/
 # Environment / secrets
 .env
 .env.*
-application-local.properties
-application-secret.properties
