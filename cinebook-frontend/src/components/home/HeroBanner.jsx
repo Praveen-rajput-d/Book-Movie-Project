@@ -27,6 +27,15 @@ const HeroBanner = ({ movies }) => {
         return () => clearInterval(interval);
 
     }, [movies]);
+    //redirect to login without login user only see the movie image and details
+    const handleBooktickets=()=>{
+        const token=localStorage.getItem("token");
+        if(!token){
+            navigate("/login");
+            return;
+        }
+        navigate(`movie/${movie.id}/shows`);
+    }
 
 
     // If movies are not available
@@ -116,8 +125,8 @@ const HeroBanner = ({ movies }) => {
 
                         <button
                             className="hero-book-btn"
-                            onClick={() =>
-                                navigate(`/movie/${movie.id}/shows`)
+                            onClick={handleBooktickets
+                                
                             }
                         >
                             🎟 Book Now
