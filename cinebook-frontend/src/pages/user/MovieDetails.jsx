@@ -45,7 +45,7 @@ const MovieDetails = () => {
             navigate("/login");
             return;
         }
-        navigate(`movie/${movie.id}/shows`);
+    navigate(`/movie/${movie.id}/shows`);
     }
 
 
