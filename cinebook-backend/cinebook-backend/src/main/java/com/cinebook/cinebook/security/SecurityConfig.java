@@ -59,7 +59,7 @@ public class SecurityConfig {
                 .sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth->auth
                         .requestMatchers("/api/auth/**").permitAll()
-                        .requestMatchers("/posters/**").permitAll()//publi api
+                        .requestMatchers("/posters/**").permitAll()//public api
                         .requestMatchers(HttpMethod.GET,"/api/movies/**").permitAll()
 
 

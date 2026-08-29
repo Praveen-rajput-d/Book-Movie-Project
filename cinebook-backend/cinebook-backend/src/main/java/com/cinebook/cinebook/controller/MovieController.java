@@ -44,7 +44,7 @@ public class MovieController {
                                                              @RequestParam(defaultValue = "asc")String sortDir){
         return ResponseEntity.ok(movieService.getAllMovies(page,size,sortBy,sortDir));
     }
-    @PreAuthorize("hasAnyRole('USER','ADMIN')")
+   
     @GetMapping("/all")
     public ResponseEntity<List<MovieResponseDto>>getAllMovie(){
         return ResponseEntity.ok(movieService.getAllMovie());
