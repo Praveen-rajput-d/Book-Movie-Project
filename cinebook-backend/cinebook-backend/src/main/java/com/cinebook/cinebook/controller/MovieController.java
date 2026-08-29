@@ -51,7 +51,7 @@ public class MovieController {
     }
 
 
-    @PreAuthorize("hasAnyRole('USER','ADMIN')")
+  
     @GetMapping("/{id}")
     public ResponseEntity<MovieResponseDto>getMovieById(@PathVariable long id){
         return ResponseEntity.ok(movieService.getMovieById(id));
