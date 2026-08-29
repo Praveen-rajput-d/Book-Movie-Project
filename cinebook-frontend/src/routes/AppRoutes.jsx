@@ -55,8 +55,8 @@ const AppRoutes = () => {
    
     <Route path="/movie/:id"element={<MovieDetails/>}/>
     <Route path="/movie/:id/shows"element={<SelectShow/>}/>
-    <Route path="/seat-selection/:showId" element={<SeatSelection/>}/>
-    <Route path="/payment" element={<Payment/>}/>
+    <Route path="/seat-selection/:showId" element={<ProtectedRoute><SeatSelection/></ProtectedRoute>}/>
+    <Route path="/payment" element={<ProtectedRoute><Payment/></ProtectedRoute>}/>
    
    
     
