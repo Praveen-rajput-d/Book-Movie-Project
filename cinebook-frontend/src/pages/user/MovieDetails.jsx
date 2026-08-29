@@ -60,6 +60,16 @@ const MovieDetails = () => {
 
     }
 
+    //without login the user click book ticket go to the login page
+    const handleBooktickets=()=>{
+        const token=localStorage.getItem("token");
+        if(!token){
+            navigate("/login");
+            return;
+        }
+        navigate(`movie/${movie.id}/shows`)
+    }
+
 
     return (
 
@@ -219,10 +229,8 @@ const MovieDetails = () => {
 
                             <button
                                 className="book-ticket-btn"
-                                onClick={() =>
-                                    navigate(
-                                        `/movie/${movie.id}/shows`
-                                    )
+                                onClick={handleBooktickets
+                                  
                                 }
                             >
                                 🎟 Book Tickets
