@@ -128,7 +128,7 @@ public class MovieServiceImpl implements MovieService {
 
     @Override
     public List<MovieResponseDto> getUpcomingMovies() {
-        return movieRepository.findByReleaseDateBefore(LocalDate.now()).stream().map(
+        return movieRepository.findByReleaseDateAfter(LocalDate.now()).stream().map(
                 movieMapper::toDto
         ).toList();
     }
