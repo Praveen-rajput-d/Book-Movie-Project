@@ -43,6 +43,7 @@ public class ShowServiceImpl  implements ShowService {
         return showMapper.todto(savedShow);
     }
 
+
     @Override
     public Page<ShowResponseDto> getAllShow(int page, int size, String sortBy, String sortDir) {
         Sort sort=sortDir.equalsIgnoreCase("asc")?Sort.by(sortBy).ascending():Sort.by(sortDir).descending();
@@ -95,7 +96,12 @@ public class ShowServiceImpl  implements ShowService {
         return showMapper.todto(saveupdatedshow);
     }
 
-//search shows by movie id
+    @Override
+    public List<ShowResponseDto> allShows() {
+        return showRepository.findAll().stream().map(showMapper::todto).toList();
+    }
+
+    //search shows by movie id
     @Override
     public List<ShowResponseDto> searchByMovie(Long movieId) {
 

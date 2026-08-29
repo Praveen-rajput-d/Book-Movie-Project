@@ -14,6 +14,7 @@ public interface ScreenService  {
     ScreenResponseDto addScreen(ScreenRequestDto requestDto);
     //get the screens with pagination
     Page<ScreenResponseDto> getAllScreen(int page,int size,String sortBy,String sortDir);
+    List<ScreenResponseDto>allScreens();
     //get the screen by id
     ScreenResponseDto getScreenByid(Long id);
     //update the screen

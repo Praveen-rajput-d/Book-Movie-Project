@@ -19,4 +19,5 @@ public class PaymentResponseDto {
     private String transactionId;
     private Double amount;
     private LocalDateTime paymentTime;
+    private  String qrCode;
 }

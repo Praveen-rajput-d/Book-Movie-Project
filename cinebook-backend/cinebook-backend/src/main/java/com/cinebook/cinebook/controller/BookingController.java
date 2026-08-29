@@ -41,19 +41,19 @@ public class BookingController {
         return ResponseEntity.ok(bookingService.getAllBookings(page,size,sortBy,sortDir));
     }
     @PreAuthorize("hasAnyRole('USER','ADMIN')")  //this method only give booking by the booking id
-    @GetMapping("{bookingId}")
+    @GetMapping("/{bookingId}")
     public ResponseEntity<BookingResponseDto>getBookingById(@PathVariable Long bookingId){
         return ResponseEntity.ok(bookingService.getBookingById(bookingId));
     }
 
     @PreAuthorize("hasAnyRole('USER','ADMIN')")
-    @GetMapping("/search/bookingNumber")         //this api can search booking based on the booking number
-    public ResponseEntity<List<BookingResponseDto>>searchBooking(@RequestParam String bookingNumber){
+    @GetMapping("/search/{bookingNumber}")         //this api can search booking based on the booking number
+    public ResponseEntity<List<BookingResponseDto>>searchBooking(@PathVariable String bookingNumber){
         return ResponseEntity.ok(bookingService.searchByBookingNumber(bookingNumber));
     }
     @PreAuthorize("hasAnyRole('USER','ADMIN')")  //this api search booking by the bookinstatus
-    @GetMapping("/status")
-    public ResponseEntity<List<BookingResponseDto>>searchByBookingStatus(@RequestParam BookingStatus bookingStatus){
+    @GetMapping("/status/{bookingStatus}")
+    public ResponseEntity<List<BookingResponseDto>>searchByBookingStatus(@PathVariable BookingStatus bookingStatus){
         return ResponseEntity.ok(bookingService.searchByStatus(bookingStatus));
     }
 
@@ -70,5 +70,10 @@ public class BookingController {
     public ResponseEntity<String>cancelBooking(@PathVariable Long bookingId){
         bookingService.cancelBooking(bookingId);
         return ResponseEntity.ok("Booking Cancelled Successfully");
+    }
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/all")
+    public ResponseEntity<List<BookingResponseDto>>allBookings(){
+        return ResponseEntity.ok(bookingService.allBookings());
     }
 }

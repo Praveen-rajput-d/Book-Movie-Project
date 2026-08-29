@@ -24,4 +24,6 @@ public class TheaterRequestDto {
     @NotNull(message = "total screen of theatre is required")
     private Integer totalScreen;
 
+    private  boolean active;
+
 }

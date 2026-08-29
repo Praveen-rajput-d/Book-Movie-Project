@@ -48,6 +48,9 @@ public class Booking {
     @OneToOne(mappedBy = "booking",cascade = CascadeType.ALL)
     private Payment payment;
 
+
+    @OneToOne(mappedBy = "booking",cascade = CascadeType.ALL)
+    private Ticket ticket;
     @PrePersist
     public void prePersist(){
         createdAt=LocalDateTime.now();

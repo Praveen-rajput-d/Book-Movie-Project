@@ -16,6 +16,7 @@ public class PaymentMapper {
        dto.setPaymentTime(payment.getPaymentTime());
        dto.setAmount(payment.getAmount());
        dto.setTransactionId(payment.getTransactionId());
+       dto.setQrCode(payment.getQrCode());
        dto.setBookingNumber(payment.getBooking().getBookingNumber());
        return dto;
 

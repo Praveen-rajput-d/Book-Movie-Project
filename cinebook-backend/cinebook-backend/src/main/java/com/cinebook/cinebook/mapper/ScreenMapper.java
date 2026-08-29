@@ -26,7 +26,7 @@ public class ScreenMapper {
      public   ScreenResponseDto todto(Screen screen){
         ScreenResponseDto dto=new ScreenResponseDto();
         dto.setId(screen.getId());
-        dto.setScreeName(screen.getScreenName());
+        dto.setScreenName(screen.getScreenName());
         dto.setScreenType(screen.getScreenType());
         dto.setCapacity(screen.getCapacity());
         dto.setActive(screen.getIsActive());

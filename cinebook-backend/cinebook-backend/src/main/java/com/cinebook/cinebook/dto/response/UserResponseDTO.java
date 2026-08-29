@@ -1,5 +1,6 @@
 package com.cinebook.cinebook.dto.response;
 
+import com.cinebook.cinebook.enums.UserStatus;
 import lombok.*;
 
 @Setter
@@ -13,6 +14,7 @@ public class UserResponseDTO {
     private String lastName;
     private String email;
     private String phone;
-    private String password;
-    protected  String role;
+    private  String role;
+    private UserStatus status;
+
 }

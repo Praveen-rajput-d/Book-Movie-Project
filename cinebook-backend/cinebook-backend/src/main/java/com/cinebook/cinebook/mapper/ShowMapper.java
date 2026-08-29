@@ -41,6 +41,8 @@ public class ShowMapper {
         responseDto.setMovieName(show.getMovie().getTitle());
         responseDto.setScreenId(show.getScreen().getId());
         responseDto.setScreenName(show.getScreen().getScreenName());
+        responseDto.setTheaterId(show.getScreen().getTheater().getId());
+        responseDto.setTheaterName(show.getScreen().getTheater().getName());
         return responseDto;
     }
 

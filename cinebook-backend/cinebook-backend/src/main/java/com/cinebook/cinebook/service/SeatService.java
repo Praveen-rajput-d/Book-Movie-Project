@@ -2,6 +2,7 @@ package com.cinebook.cinebook.service;
 
 import com.cinebook.cinebook.dto.request.SeatRequestDto;
 import com.cinebook.cinebook.dto.response.SeatResponseDto;
+import com.cinebook.cinebook.dto.response.SeatSelectionResponseDto;
 import com.cinebook.cinebook.entity.Seat;
 import com.cinebook.cinebook.enums.SeatType;
 import org.springframework.data.domain.Page;
@@ -22,6 +23,7 @@ public interface SeatService  {
     List<SeatResponseDto>searchBySeatNumber(String seatNumber);
     List<SeatResponseDto>IsactiveTrue();
 
+    List<SeatSelectionResponseDto>getSeatsByShow(Long showId);  //get the seat accoring to the show
 //genearate seats
 //    String generateSeats(Long screenId);
 }

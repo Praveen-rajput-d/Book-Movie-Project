@@ -22,4 +22,7 @@ public interface TicketService {
     //by show date
     List<TicketResponseDto>getTicketsByshowDate(LocalDate showDate);
     List<TicketResponseDto>getMyTickets();
+
+
+    List<TicketResponseDto>allTickets();
 }

@@ -23,9 +23,11 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -37,6 +39,7 @@ public class BookingServiceImpl  implements BookingService {
       private final UserRepository userRepository;
       private  final BookingMapper bookingMapper;
       private  final SeatRepository seatRepository;
+      private  final  TicketRepository ticketRepository;
 
     @Override
     public BookingResponseDto createBooking(BookingRequestDto request) {
@@ -84,7 +87,7 @@ public class BookingServiceImpl  implements BookingService {
 
             }
         }
-        String bookingNumber="BK"+System.currentTimeMillis();
+        String bookingNumber="BK-"+LocalDate.now().format(DateTimeFormatter.BASIC_ISO_DATE)+"-"+ UUID.randomUUID().toString().substring(0,6).toUpperCase();
         Booking booking=Booking.builder()
                 .bookingNumber(bookingNumber)
                 .bookingTime(LocalDateTime.now())
@@ -168,8 +171,10 @@ public class BookingServiceImpl  implements BookingService {
         User user=userRepository.findByEmail(email).orElseThrow(()->new ResourceNotFoundException("User Not Found"+email));
         Booking booking=bookingRepository.findById(bookingId).orElseThrow(()->new ResourceNotFoundException("Booking Not Found with this booking Id"+bookingId));
         //user are able to cancel only there own booking not others userss booking
-        if(booking.getUser().getId()!=(user.getId())){
-            throw new RuntimeException("You are not allowed to cancel other users booking");
+        if (booking.getUser().getId() != user.getId()) {
+            throw new RuntimeException(
+                    "You are not allowed to cancel other users booking"
+            );
         }
         //user can only cancel there own booking ony one time
         if(booking.getBookingStatus()==BookingStatus.CANCELLED){
@@ -182,6 +187,11 @@ public class BookingServiceImpl  implements BookingService {
         }
         bookingSeatRepository.saveAll(bookingSeats);
         bookingRepository.save(booking);
+    }
+
+    @Override
+    public List<BookingResponseDto> allBookings() {
+        return bookingRepository.findAll().stream().map(bookingMapper::todto).toList();
     }
 
 

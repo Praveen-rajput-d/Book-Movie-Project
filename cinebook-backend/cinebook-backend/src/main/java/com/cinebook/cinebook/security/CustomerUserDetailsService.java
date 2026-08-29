@@ -1,5 +1,6 @@
 package com.cinebook.cinebook.security;
 
+import com.cinebook.cinebook.enums.UserStatus;
 import com.cinebook.cinebook.repository.UserRepository;
 import com.cinebook.cinebook.entity.User;
 import lombok.RequiredArgsConstructor;
@@ -30,6 +31,11 @@ public class CustomerUserDetailsService implements UserDetailsService {
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() ->
                         new UsernameNotFoundException("User not found"));
+        if(user.getStatus()!= UserStatus.ACTIVE){
+            throw new UsernameNotFoundException(
+                    "User account is not active"
+            );
+        }
 
         return new org.springframework.security.core.userdetails.User(
                 user.getEmail(),

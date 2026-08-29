@@ -26,4 +26,7 @@ public interface ShowService {
 
 
     ShowResponseDto activateShows(Long id);
+
+    //all shows
+    List<ShowResponseDto>allShows();
 }

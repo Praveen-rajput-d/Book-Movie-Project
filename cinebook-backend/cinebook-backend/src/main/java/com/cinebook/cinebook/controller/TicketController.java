@@ -17,7 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class TicketController {
     private final TicketServiceImp ticketService;
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('ADMIN','USER')")
     @GetMapping("/{id}")
     public ResponseEntity<TicketResponseDto>getTicketByid(@PathVariable  Long id){
         return ResponseEntity.ok(ticketService.getTicketById(id));
@@ -66,5 +66,11 @@ public class TicketController {
     @GetMapping("/my-tickets")
     public ResponseEntity<List<TicketResponseDto>>getMyTickets(){
         return ResponseEntity.ok(ticketService.getMyTickets());
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/all")
+    public ResponseEntity<List<TicketResponseDto>>allTickets(){
+        return ResponseEntity.ok(ticketService.allTickets());
     }
 }

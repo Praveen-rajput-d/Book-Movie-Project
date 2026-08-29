@@ -18,4 +18,5 @@ public interface SeatRepository extends JpaRepository<Seat,Long> {
     List<Seat>findBySeatType(SeatType seatType);
     List<Seat>findByIsActiveTrue();
     boolean existsByScreen(Screen screen);
+
 }

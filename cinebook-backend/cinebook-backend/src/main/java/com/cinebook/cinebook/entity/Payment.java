@@ -33,6 +33,9 @@ public class Payment {
     private Double amount;
     @Column(nullable = false)
     private LocalDateTime paymentTime;
+    @Lob
+    @Column(columnDefinition = "LONGTEXT")
+    private  String qrCode;
 
 
 }

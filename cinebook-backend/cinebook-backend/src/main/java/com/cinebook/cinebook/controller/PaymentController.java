@@ -91,4 +91,9 @@ public class PaymentController {
     public ResponseEntity<Long>countFailedPayment(){
         return ResponseEntity.ok(paymentService.countFailedPayment());
     }
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/all")
+    public ResponseEntity<List<PaymentResponseDto>>allPayments(){
+        return  ResponseEntity.ok(paymentService.allPayments());
+    }
 }

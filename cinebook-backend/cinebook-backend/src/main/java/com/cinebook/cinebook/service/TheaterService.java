@@ -15,6 +15,8 @@ public interface TheaterService {
     //Get All Theatre
     Page<TheaterResponseDto> getAllTheatre(int size,int page,String sortDir,String sortBy);
 
+    List<TheaterResponseDto>AllTheatres();
+
     //Get Theatre By id
     TheaterResponseDto getTheatregetById(Long id);
 

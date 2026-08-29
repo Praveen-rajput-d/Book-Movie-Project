@@ -16,7 +16,8 @@ import java.util.List;
 import java.util.Optional;
 
 
-public interface BookingService {
+public interface
+BookingService {
     BookingResponseDto createBooking(BookingRequestDto request);
    Page<BookingResponseDto> getAllBookings(int page,int size,String sortBy,String sortDir);
     BookingResponseDto getBookingById(Long bookingId);
@@ -26,5 +27,7 @@ public interface BookingService {
       List<BookingResponseDto> getMyBookings();
       void cancelBooking(Long bookingId);
 
+
+      List<BookingResponseDto>allBookings();
 
 }

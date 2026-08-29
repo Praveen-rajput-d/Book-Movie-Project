@@ -27,4 +27,7 @@ AND bs.bookingSeatStatus IN('PENDING','CONFIRMED')
             @Param("showId") Long showId,
             @Param("seatIds") List<Long> seatIds
     );
+
+
+    List<BookingSeat>findByBookingShowId(Long showId);
 }

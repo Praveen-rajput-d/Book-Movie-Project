@@ -36,14 +36,20 @@ public class MovieController {
         return new ResponseEntity<>(movieResponseDto, HttpStatus.CREATED);
     }
 
-   @PreAuthorize("hasAnyRole('USER','ADMIN')")
-@GetMapping({ "", "/", "/all" })
+    @PreAuthorize("hasAnyRole('USER','ADMIN')")
+    @GetMapping
     public  ResponseEntity<Page<MovieResponseDto>>getAllMovies(@RequestParam(defaultValue = "0")int page,
                                                              @RequestParam(defaultValue = "5")int size,
                                                              @RequestParam(defaultValue = "id")String sortBy,
                                                              @RequestParam(defaultValue = "asc")String sortDir){
         return ResponseEntity.ok(movieService.getAllMovies(page,size,sortBy,sortDir));
     }
+    @PreAuthorize("hasAnyRole('USER','ADMIN')")
+    @GetMapping("/all")
+    public ResponseEntity<List<MovieResponseDto>>getAllMovie(){
+        return ResponseEntity.ok(movieService.getAllMovie());
+    }
+
 
     @PreAuthorize("hasAnyRole('USER','ADMIN')")
     @GetMapping("/{id}")

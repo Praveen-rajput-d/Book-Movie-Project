@@ -25,6 +25,9 @@ public class Ticket {
     @Enumerated(EnumType.STRING)
     private TicketStatus ticketStatus;
     private LocalDateTime generatedAt;
+    @Lob
+    @Column(columnDefinition = "LONGTEXT")
+    private  String qrCode;
 
 
 }

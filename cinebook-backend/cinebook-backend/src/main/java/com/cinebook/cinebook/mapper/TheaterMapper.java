@@ -36,6 +36,7 @@ public class TheaterMapper {
         responseDto.setState(theater.getState());
         responseDto.setPincode(theater.getPincode());
         responseDto.setTotalScreen(theater.getTotalScreen());
+        responseDto.setActive(true);
         responseDto.setCreatedAt(LocalDateTime.now());
         responseDto.setUpdatedAt(LocalDateTime.now());
         return responseDto;

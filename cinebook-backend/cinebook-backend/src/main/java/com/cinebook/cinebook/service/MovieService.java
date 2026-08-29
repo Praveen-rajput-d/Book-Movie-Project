@@ -18,7 +18,7 @@ public interface MovieService {
     void deleteMovie(long id);//delete movie
     MovieResponseDto updateMovie(Long id,MovieRequestDto movieRequestDto); //update the movie
     MovieResponseDto activateMovie(Long id);
-
+      List<MovieResponseDto>getAllMovie(); //for all the database movies get
    //searching methods
     List<MovieResponseDto>searchMovie(String title);
     List<MovieResponseDto>getMoviesByGenre(String genre);

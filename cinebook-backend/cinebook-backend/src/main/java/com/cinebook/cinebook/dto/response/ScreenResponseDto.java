@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Setter
 public class ScreenResponseDto {
     private Long id;
-   private  String screeName;
+   private  String screenName;
    private String screenType;
    private  Integer capacity;
    private Boolean active;

@@ -13,7 +13,8 @@ public class TicketMapper {
         return TicketResponseDto.builder()
                 .id(ticket.getId())
                 .ticketNumber(ticket.getTicketNumber())
-                .bookingNumber(ticket.getTicketNumber())
+
+                .bookingNumber(ticket.getBooking().getBookingNumber())
                 .movieName(ticket.getBooking().getShow().getMovie().getTitle())
                 .theatreName(ticket.getBooking().getShow().getScreen().getTheater().getName())
                 .screenName(ticket.getBooking().getShow().getScreen().getScreenName())
@@ -25,6 +26,7 @@ public class TicketMapper {
                         .collect(Collectors.toList()))
                 .totalAmount(ticket.getBooking().getTotalAmount())
                 .ticketStatus(ticket.getTicketStatus())
+                .qrCode(ticket.getQrCode())
                 .generatedAt(ticket.getGeneratedAt())
                 .build();
     }

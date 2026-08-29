@@ -2,6 +2,7 @@ package com.cinebook.cinebook.controller;
 
 import com.cinebook.cinebook.dto.request.SeatRequestDto;
 import com.cinebook.cinebook.dto.response.SeatResponseDto;
+import com.cinebook.cinebook.dto.response.SeatSelectionResponseDto;
 import com.cinebook.cinebook.enums.SeatType;
 import com.cinebook.cinebook.serviceImpl.SeatServiceImpl;
 import lombok.RequiredArgsConstructor;
@@ -68,12 +69,12 @@ public class SeatController {
      }
      //search seat by seat number
      @PreAuthorize(("hasAnyRole('USER','ADMIN')"))
-    @GetMapping("/SeatNumber")
+    @GetMapping("/SeatNumber/{seatNumber}")
     public ResponseEntity<List<SeatResponseDto>>getSeatBySeatNumber(@PathVariable String seatNumber){
         return ResponseEntity.ok(seatService.searchBySeatNumber(seatNumber));
     }
     @PreAuthorize(("hasAnyRole('USER','ADMIN')"))
-    @GetMapping("/type")
+    @GetMapping("/type{seatType}")
     public ResponseEntity<List<SeatResponseDto>>getSeatBySeatType(@PathVariable SeatType seatType){
         return ResponseEntity.ok(seatService.searchBySeatType(seatType));
     }
@@ -82,7 +83,11 @@ public class SeatController {
     public ResponseEntity<List<SeatResponseDto>>getOnlyActiveSeat(){
         return ResponseEntity.ok(seatService.IsactiveTrue());
     }
-
+    @PreAuthorize("hasAnyRole('USER','ADMIN')")
+    @GetMapping("/show/{showId}")
+       public ResponseEntity<List<SeatSelectionResponseDto>>getSeatsByShow(@PathVariable Long showId){
+        return ResponseEntity.ok(seatService.getSeatsByShow(showId));
+       }
     //add city for screen
 //    @PreAuthorize("hasRole('ADMIN')")
 //    @PostMapping("/generate/{screenId}")

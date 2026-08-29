@@ -26,4 +26,5 @@ public class TicketResponseDto {
     private Double totalAmount;
     private TicketStatus ticketStatus;
     private LocalDateTime generatedAt;
+    private  String qrCode;
 }

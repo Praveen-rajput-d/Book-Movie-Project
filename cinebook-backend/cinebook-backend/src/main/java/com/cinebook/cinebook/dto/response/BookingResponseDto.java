@@ -17,6 +17,7 @@ public class BookingResponseDto {
 
     private Long id;
     private String bookingNumber;
+    private  Long ticketId;
     private String movieName;
     private String theatreName;
     private String screenName;

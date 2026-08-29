@@ -1,24 +1,23 @@
 package com.cinebook.cinebook.serviceImpl;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.List;
-
+import com.cinebook.cinebook.mapper.MovieMapper;
+import com.cinebook.cinebook.dto.request.MovieRequestDto;
+import com.cinebook.cinebook.dto.response.MovieResponseDto;
+import com.cinebook.cinebook.entity.Movie;
+import com.cinebook.cinebook.exception.ResourceNotFoundException;
+import com.cinebook.cinebook.repository.MovieRepository;
+import com.cinebook.cinebook.service.MovieService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import com.cinebook.cinebook.dto.request.MovieRequestDto;
-import com.cinebook.cinebook.dto.response.MovieResponseDto;
-import com.cinebook.cinebook.entity.Movie;
-import com.cinebook.cinebook.exception.ResourceNotFoundException;
-import com.cinebook.cinebook.mapper.MovieMapper;
-import com.cinebook.cinebook.repository.MovieRepository;
-import com.cinebook.cinebook.service.MovieService;
-
-import lombok.RequiredArgsConstructor;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -100,6 +99,13 @@ public class MovieServiceImpl implements MovieService {
         Movie saved=movieRepository.save(movie);
         return movieMapper.toDto(saved) ;
     }
+
+    @Override
+    public List<MovieResponseDto> getAllMovie() {
+
+        return movieRepository.findAll().stream().map(movieMapper::toDto).toList();
+    }
+
     @Override
     public List<MovieResponseDto> searchMovie(String title) {
         List<Movie>movies=movieRepository.findByTitleContainingIgnoreCase(title);
@@ -130,7 +136,7 @@ public class MovieServiceImpl implements MovieService {
 
     @Override
     public List<MovieResponseDto> getUpcomingMovies() {
-        return movieRepository.findByReleaseDateAfter(LocalDate.now()).stream().map(
+        return movieRepository.findByReleaseDateBefore(LocalDate.now()).stream().map(
                 movieMapper::toDto
         ).toList();
     }

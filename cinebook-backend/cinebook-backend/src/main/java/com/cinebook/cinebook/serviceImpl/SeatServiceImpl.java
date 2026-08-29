@@ -2,14 +2,21 @@ package com.cinebook.cinebook.serviceImpl;
 
 import com.cinebook.cinebook.dto.request.SeatRequestDto;
 import com.cinebook.cinebook.dto.response.SeatResponseDto;
+import com.cinebook.cinebook.dto.response.SeatSelectionResponseDto;
+import com.cinebook.cinebook.entity.BookingSeat;
 import com.cinebook.cinebook.entity.Screen;
 import com.cinebook.cinebook.entity.Seat;
+import com.cinebook.cinebook.entity.Show;
+import com.cinebook.cinebook.enums.BookingSeatStatus;
 import com.cinebook.cinebook.enums.SeatType;
 import com.cinebook.cinebook.exception.ResourceNotFoundException;
 import com.cinebook.cinebook.mapper.SeatMapper;
+import com.cinebook.cinebook.repository.BookingSeatRepository;
 import com.cinebook.cinebook.repository.ScreenRepository;
 import com.cinebook.cinebook.repository.SeatRepository;
+import com.cinebook.cinebook.repository.ShowRepository;
 import com.cinebook.cinebook.service.SeatService;
+import lombok.Builder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -20,13 +27,18 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
+@Builder
 public class SeatServiceImpl implements SeatService {
     private final SeatRepository seatRepository;
     private final ScreenRepository screenRepository;
     private final SeatMapper seatMapper;
+    private final BookingSeatRepository bookingSeatRepository;
+    private final ShowRepository showRepository;
 
 
     @Override
@@ -112,7 +124,30 @@ public class SeatServiceImpl implements SeatService {
         return seatRepository.findByIsActiveTrue().stream().map(seatMapper::todto).toList();
     }
 
-//    @Override
+    @Override
+    public List<SeatSelectionResponseDto> getSeatsByShow(Long showId) {
+        //find show
+        Show show=showRepository.findById(showId).orElseThrow(()->new ResourceNotFoundException("Show Not Found"));
+        //get all seats of that screen
+        List<Seat>seats=seatRepository.findByScreenId(show.getScreen().getId());
+        //get all booking seats of this show
+        List<BookingSeat>bookingSeats=bookingSeatRepository.findByBookingShowId(showId);
+        //store only confirmed seat ids
+        Set<Long>bookedSeatsIds=bookingSeats.stream()
+                .filter(bs->bs.getBookingSeatStatus()== BookingSeatStatus.CONFIRMED)
+                .map(bs->bs.getSeat().getId())
+                .collect(Collectors.toSet());
+
+        //convert into seatSelectionResponse Dto
+
+        return seats.stream().map(seat->SeatSelectionResponseDto.builder()
+                .id(seat.getId())
+                .seatNumber(seat.getSeatNumber())
+                .seatType(seat.getSeatType())
+                .booked(bookedSeatsIds.contains(seat.getId())).build()).toList();
+    }
+
+//    @Overrid
 //    public String generateSeats(Long screenId) {
 //        Screen screen=screenRepository.findById(screenId).orElseThrow(()->new ResourceNotFoundException("Screen Not Found"));
 //       //prevent from duplicate Generation

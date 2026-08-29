@@ -61,4 +61,5 @@ t.generatedAt>=:start and t.generatedAt<:end
     )
     Long countTodayTickets(@Param("start")LocalDateTime start,
                            @Param("end")LocalDateTime end);
+
 }

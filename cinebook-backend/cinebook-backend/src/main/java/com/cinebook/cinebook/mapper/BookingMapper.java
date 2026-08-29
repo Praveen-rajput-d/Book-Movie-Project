@@ -26,6 +26,10 @@ public class BookingMapper {
         dto.setSeatNumbers(seatNumbers);
         dto.setTotalAmount(booking.getTotalAmount());
         dto.setBookingStatus(booking.getBookingStatus());
+   if(booking.getTicket()!=null){
+       dto.setTicketId(booking.getTicket().getId());
+   }
+
         return  dto;
     }
 }

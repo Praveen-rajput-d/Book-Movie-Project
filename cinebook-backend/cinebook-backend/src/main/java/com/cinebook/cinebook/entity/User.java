@@ -1,7 +1,10 @@
 package com.cinebook.cinebook.entity;
 
+import com.cinebook.cinebook.enums.UserStatus;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.time.LocalDateTime;
 
 
 @Entity
@@ -31,6 +34,13 @@ public class User {
     @ManyToOne
     @JoinColumn(name = "role_id")
     private  Role role;
+
+    private LocalDateTime createdAt;
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+     private UserStatus status=UserStatus.ACTIVE;
+
+
 
 
 }

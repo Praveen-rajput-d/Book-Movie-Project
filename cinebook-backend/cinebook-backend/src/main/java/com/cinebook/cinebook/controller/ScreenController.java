@@ -83,7 +83,7 @@ private  final ScreenServiceImpl screenService;
     }
     //seaarch by screen type
     @PreAuthorize(("hasAnyRole('USER','ADMIN')"))
-    @GetMapping("/search/{screenType}")
+    @GetMapping("/search/type/{screenType}")
     public ResponseEntity<List<ScreenResponseDto>> searchByScreenType(
             @PathVariable String screenType){
 
@@ -128,5 +128,10 @@ private  final ScreenServiceImpl screenService;
         return ResponseEntity.ok(
                 screenService.getScreenByTheater(theaterId)
         );
+    }
+    @PreAuthorize(("hasRole('ADMIN')"))
+    @GetMapping("/all")
+    public ResponseEntity<List<ScreenResponseDto>>allScreens(){
+        return  ResponseEntity.ok(screenService.allScreens());
     }
 }

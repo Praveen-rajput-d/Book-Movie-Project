@@ -1,6 +1,7 @@
 package com.cinebook.cinebook.controller;
 
 import com.cinebook.cinebook.dto.request.TheaterRequestDto;
+import com.cinebook.cinebook.dto.response.MovieResponseDto;
 import com.cinebook.cinebook.dto.response.TheaterResponseDto;
 import com.cinebook.cinebook.service.TheaterService;
 import jakarta.validation.Valid;
@@ -27,6 +28,11 @@ private  final TheaterService theaterService;
         TheaterResponseDto responseDto=theaterService.addTheatre(requestDto);
         return new ResponseEntity<>(responseDto,HttpStatus.CREATED);
     }
+    @PreAuthorize(("hasAnyRole('USER','ADMIN')"))
+    @GetMapping("/all")
+    public ResponseEntity<List<TheaterResponseDto>>allTheatres(){
+        return ResponseEntity.ok(theaterService.AllTheatres());
+    }
 
 
     @PreAuthorize(("hasAnyRole('USER','ADMIN')"))
@@ -51,7 +57,7 @@ public ResponseEntity<TheaterResponseDto>updateTheater( @PathVariable Long id,@R
 
     @PreAuthorize("hasRole('ADMIN')")
 @PutMapping("/{id}/deactivate")
-public ResponseEntity<String >deleteTheater(@PathVariable  Long id){
+public ResponseEntity<String >deactivateTheater(@PathVariable  Long id){
         theaterService.deleteTheatre(id);
         return ResponseEntity.ok("Theatre Deleted Successfully");
 }
@@ -111,3 +117,6 @@ public ResponseEntity<String >deleteTheater(@PathVariable  Long id){
         return ResponseEntity.ok(theaterService.countActiveTheaters());
     }
 }
+
+
+

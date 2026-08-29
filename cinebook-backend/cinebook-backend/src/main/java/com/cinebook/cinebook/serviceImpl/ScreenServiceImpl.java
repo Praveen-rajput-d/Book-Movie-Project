@@ -81,6 +81,10 @@ public class ScreenServiceImpl implements ScreenService {
         return pages.map(screenMapper::todto);
     }
 
+    @Override
+    public List<ScreenResponseDto> allScreens() {
+        return screenRepository.findAll().stream().map(screenMapper::todto).toList();
+    }
 
 
     @Override

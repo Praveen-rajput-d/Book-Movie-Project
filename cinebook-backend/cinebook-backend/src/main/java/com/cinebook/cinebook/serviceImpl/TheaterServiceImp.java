@@ -40,6 +40,12 @@ public class TheaterServiceImp implements TheaterService {
     }
 
     @Override
+    public List<TheaterResponseDto> AllTheatres() {
+
+        return theaterRepository.findAll().stream().map(theaterMapper::todto).toList();
+    }
+
+    @Override
     public TheaterResponseDto getTheatregetById(Long id) {
         Theater theater=theaterRepository.findById(id).orElseThrow(()->
                 new ResourceNotFoundException("Theater Not Found"+id));

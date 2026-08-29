@@ -6,6 +6,8 @@ import com.cinebook.cinebook.dto.response.MovieResponseDto;
 import com.cinebook.cinebook.entity.Movie;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
+
 @Component
 public class MovieMapper {
 
@@ -44,8 +46,8 @@ public class MovieMapper {
         dto.setTrailerUrl(movie.getTrailerUrl());
         dto.setRating(movie.getRating());
         dto.setActive(movie.getIsActive());
-        dto.setCreatedAt(movie.getCreatedAt());
-        dto.setUpdatedAt(movie.getUpdatedAt());
+        dto.setCreatedAt(LocalDateTime.now());
+        dto.setUpdatedAt(LocalDateTime.now());
 
         return dto;
     }

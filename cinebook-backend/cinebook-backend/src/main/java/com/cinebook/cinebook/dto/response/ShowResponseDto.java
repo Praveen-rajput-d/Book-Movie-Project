@@ -26,6 +26,8 @@ public class ShowResponseDto {
      private  String screenName;
      private LocalDateTime cratedAt;
      private  LocalDateTime updatedAt;
+     private Long theaterId;
+     private String theaterName;
 
 
 

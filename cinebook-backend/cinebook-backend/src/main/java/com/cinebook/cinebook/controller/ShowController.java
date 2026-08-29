@@ -51,7 +51,7 @@ public class ShowController {
     }
  //deactivate the shows
  @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("/deactivate/{id}")
+    @PutMapping("/deactivate/{id}")
     public ResponseEntity<String>deleteShow(@PathVariable Long id){
         showService.deleteShow(id);
         return ResponseEntity.ok("Show Deleted Successfully");
@@ -74,13 +74,13 @@ public class ShowController {
         return ResponseEntity.ok(showService.searchByScreen(screenId));
     }
     @PreAuthorize(("hasAnyRole('USER','ADMIN')"))
-    @GetMapping("/date")
-    public ResponseEntity<List<ShowResponseDto>>getShowsByDate(@RequestParam LocalDate showDate){
+    @GetMapping("/date/{showDate}")
+    public ResponseEntity<List<ShowResponseDto>>getShowsByDate(@PathVariable LocalDate showDate){
         return ResponseEntity.ok(showService.searchByShowsDate(showDate));
     }
     @PreAuthorize(("hasAnyRole('USER','ADMIN')"))
-    @GetMapping("/time")
-    public ResponseEntity<List<ShowResponseDto>>getShowsByStartTime(@RequestParam LocalTime time){
+    @GetMapping("/time/{time}")
+    public ResponseEntity<List<ShowResponseDto>>getShowsByStartTime(@PathVariable LocalTime time){
         return ResponseEntity.ok(showService.searchByShowsTime(time));
     }
     @PreAuthorize(("hasAnyRole('USER','ADMIN')"))
@@ -104,5 +104,9 @@ public class ShowController {
         return ResponseEntity.ok(showService.countActiveShows());
     }
 
-
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/all")
+public ResponseEntity<List<ShowResponseDto>>allShows(){
+        return  ResponseEntity.ok(showService.allShows());
+}
 }
