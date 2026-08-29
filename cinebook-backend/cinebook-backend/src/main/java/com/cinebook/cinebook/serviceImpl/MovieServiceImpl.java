@@ -1,22 +1,24 @@
 package com.cinebook.cinebook.serviceImpl;
 
-import com.cinebook.cinebook.mapper.MovieMapper;
-import com.cinebook.cinebook.dto.request.MovieRequestDto;
-import com.cinebook.cinebook.dto.response.MovieResponseDto;
-import com.cinebook.cinebook.entity.Movie;
-import com.cinebook.cinebook.exception.ResourceNotFoundException;
-import com.cinebook.cinebook.repository.MovieRepository;
-import com.cinebook.cinebook.service.MovieService;
-import lombok.RequiredArgsConstructor;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.List;
+import com.cinebook.cinebook.dto.request.MovieRequestDto;
+import com.cinebook.cinebook.dto.response.MovieResponseDto;
+import com.cinebook.cinebook.entity.Movie;
+import com.cinebook.cinebook.exception.ResourceNotFoundException;
+import com.cinebook.cinebook.mapper.MovieMapper;
+import com.cinebook.cinebook.repository.MovieRepository;
+import com.cinebook.cinebook.service.MovieService;
+
+import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
